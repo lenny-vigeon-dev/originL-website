@@ -1,0 +1,21 @@
+<script lang="ts">
+    import "$lib/styles.css";
+
+    export let title: string;
+    export let content: string;
+    export let href: string = "/";
+
+</script>
+
+<div class="contact-info">
+    <p>{title}</p>
+    <a {href}>{content}</a>
+</div>
+
+<style>
+    .contact-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+</style>
