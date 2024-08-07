@@ -9,6 +9,10 @@
 
 <div class="contact-info">
     <p>{title}</p>
+    {#if title[title.length - 1] === " "}
+        <div style="width: 0.3em;" />
+    {/if}
+
     <a {href}>{content}</a>
 </div>
 
