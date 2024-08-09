@@ -11,9 +11,9 @@
         </button>
         <nav>
             <a href="/">Accueil</a>
-            <a href="/about">Prendre rendez-vous</a>
-            <a href="/contact">A propos</a>
-            <a href="/contact">FAQ</a>
+            <a href="/reservation">Prendre rendez-vous</a>
+            <a href="/about">A propos</a>
+            <!-- <a href="/Q&A">FAQ</a> -->
         </nav>
     </div>
 </header>
