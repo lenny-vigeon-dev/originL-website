@@ -5,15 +5,15 @@
 
 <header>
     <div class="inner-header">
-        <button class="homepage-button" aria-label="Go to homepage">
+        <a class="homepage-button" href="/">
             <img class="logo" src={logo} alt="Origin L logo" />
             <h1>OriginL</h1>
-        </button>
+        </a>
         <nav>
             <a href="/">Accueil</a>
             <a href="/reservation">Prendre rendez-vous</a>
             <a href="/about">A propos</a>
-            <!-- <a href="/Q&A">FAQ</a> -->
+            <a href="/Q&A">FAQ</a>
         </nav>
     </div>
 </header>

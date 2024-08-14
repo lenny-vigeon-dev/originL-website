@@ -1,6 +1,6 @@
 <script lang="ts">
     import "$lib/styles.css";
-    import ContactInfo from './ContactInfo.svelte';
+    import ContactInfo from '../lib/components/ContactInfo.svelte';
 
     const address: string = "44 Bis Avenue du Clos saint Georges, Bussy-Saint-Georges 77600";
     const phoneNumber: string = "+33 7 82 00 81 52";
