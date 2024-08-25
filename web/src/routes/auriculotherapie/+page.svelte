@@ -46,7 +46,7 @@
     }
 
     h1 {
-        position: sticky;
+        /* position: sticky; */
         text-align: center;
         color: var(--color4);
         font-size: 6em;

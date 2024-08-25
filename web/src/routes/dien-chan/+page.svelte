@@ -9,7 +9,7 @@
 <h1>Dien Chan</h1>
 <Tile>
     <div class="img-content">
-        <!-- <img src="dien_chan.png" alt="Dien Chan" /> -->
+        <img src="dien_chan.png" alt="Dien Chan" />
         <p>
             Dien Chan est une méthode développée dans les années 1980
             par le professeur Bui Quoc Chau.
@@ -36,7 +36,7 @@
     }
 
     h1 {
-        position: sticky;
+        /* position: sticky; */
         text-align: center;
         color: var(--color4);
         font-size: 6em;

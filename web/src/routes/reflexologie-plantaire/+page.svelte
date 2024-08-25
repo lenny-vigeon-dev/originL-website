@@ -1,8 +1,5 @@
 <script lang="ts">
     import Tile from '$lib/components/Tile.svelte';
-    import TileContainer from '$lib/components/TileContainer.svelte';
-    import PricingTile from '$lib/components/PricingTile.svelte';
-    import ContactInfo from '$lib/components/ContactInfo.svelte';
 
 </script>
 
@@ -41,7 +38,7 @@
     }
 
     h1 {
-        position: sticky;
+        /* position: sticky; */
         text-align: center;
         color: var(--color4);
         font-size: 6em;

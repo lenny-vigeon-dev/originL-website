@@ -9,7 +9,7 @@
 <h1>Massage plantaire ou palmaire</h1>
 <Tile>
     <div class="img-content">
-        <!-- <img src="dien_chan.png" alt="Dien Chan" /> -->
+        <img src="massage_plantaire_ou_palmaire.png" alt="Dien Chan" />
         <p>
             Cette prestation a pour vocation d’offrir un véritable
             moment de détente à l’une ou l’autres de ces parties du corps
@@ -34,7 +34,7 @@
 
 <style>
     img {
-        width: 50%;
+        height: 50%;
     }
 
     p {
@@ -44,7 +44,7 @@
     }
 
     h1 {
-        position: sticky;
+        /* position: sticky; */
         text-align: center;
         color: var(--color4);
         font-size: 6em;

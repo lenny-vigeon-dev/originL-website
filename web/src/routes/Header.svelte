@@ -7,7 +7,7 @@
     <div class="inner-header">
         <a class="homepage-button" href="/">
             <img class="logo" src={logo} alt="Origin L logo" />
-            <h1>OriginL</h1>
+            <h1>LR - Réflexologie</h1>
         </a>
         <nav>
             <ul class="menu">
@@ -25,7 +25,7 @@
                 </li>
                 <a href="/reservation">Prendre rendez-vous</a>
                 <a href="/about">A propos</a>
-                <a href="/Q&A">FAQ</a>
+                <!-- <a href="/Q&A">FAQ</a> -->
             </ul>
         </nav>
     </div>

@@ -9,8 +9,9 @@
 
 <footer>
     <div class="inner-footer">
-        <a href="/">Condition générale d'utilisation</a>
-        <a href="/">Condition générale de vente</a>
+        <a href="/">Conditions générale d'utilisation</a>
+        <a href="/">Conditions générale de vente</a>
+        <a href="/">Mentions légales</a>
     </div>
 </footer>
 
