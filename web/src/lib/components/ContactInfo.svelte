@@ -22,4 +22,8 @@
         flex-direction: row;
         align-items: center;
     }
+
+    p, a {
+        font-size: 1.5em;
+    }
 </style>

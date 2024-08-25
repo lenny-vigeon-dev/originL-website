@@ -21,11 +21,13 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+pre {
 	font-weight: bold;
 	color: var(--color1);
 	margin: 0px;
 	padding: 0px;
+	font-family: var(--font-body);
 }
 
 p {

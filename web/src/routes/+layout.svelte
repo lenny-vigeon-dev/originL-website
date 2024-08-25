@@ -6,13 +6,13 @@
 </script>
 
 <main>
-    <CookieModal />
     <Header />
     <div class="content">
         <div class="inner-content">
             <slot />
         </div>
     </div>
+    <CookieModal />
     <!-- <Footer /> -->
 </main>
 
@@ -30,9 +30,12 @@
     }
 
     .content {
-        width: 100%;
+        width: 100vw;
         height: 100%;
         overflow-y: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 
     .inner-content {
@@ -41,6 +44,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 1em;
+        gap: 2em;
+        width: 100%;
+        max-width: 100em;
     }
 </style>

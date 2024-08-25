@@ -19,9 +19,49 @@
     <p>Une séance dure environ 1h  dont 30 à 40 minutes de massage.</p>
     <p>(Prévoir 1h30 pour la première séance)</p>
 </Tile>
+<Tile>
+    <p>La pratique des séances en réflexologie, la technique principalement utilisé
+        sera en réflexologie plantaire. Chaque séance étant adaptée aux besoins de
+        la personne, je pourrais être amenée à pratiquer également en réflexologie
+        auriculaire ou palmaire.</p>
+</Tile>
+<Tile>
+    <p>La durée annoncée pour chaque prestation est estimative et ne prend pas en
+        compte le temps d’installation et d’échange préalable. Les personnes devront
+        prévoir environ 20 minutes supplémentaires pour les temps d’installation et fin
+        de séance.</p>
+</Tile>
 <TileContainer>
-    <PricingTile title="Massage bien-être Réflexologie plantaire" price={40}></PricingTile>
-    <PricingTile title="Massage Réflexologie palmaire" price={45}></PricingTile>
-    <PricingTile title="Massage Réflexologie plantaire" price={55}></PricingTile>
-    <PricingTile title="Massage Réflexologie plantaire + Réflexologie auriculaire" price={60}></PricingTile>
+    <PricingTile title="Massage Plantaire « Bien-être »"price={50}>
+        Durée: 45 minutes
+    </PricingTile>
+    <PricingTile title="Massage Palmaire « Bien-être »" price={50}>
+        Durée: 45 minutes
+    </PricingTile>
+    <PricingTile title="Massage bien-être des mains + tonification Dien Chan" price={60}>
+        Durée: 60 minutes
+    </PricingTile>
+    <PricingTile title="Massage bien-être des pieds + tonification Dien Chan" price={60}>
+        Durée: 60 minutes
+    </PricingTile>
+    <PricingTile title="Séance de « Dien Chan »" price={35}>
+        Durée: 30 minutes
+    </PricingTile>
+    <PricingTile title="Séance de Réflexologie*" price={35}>
+        Durée: 60 minutes<br>
+        * un bilan personnalisé sera établi lors de la première séance.
+    </PricingTile>
 </TileContainer>
+
+<style>
+    p {
+        text-align: justify;
+        font-size: 1.5em;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2em;
+    }
+
+</style>

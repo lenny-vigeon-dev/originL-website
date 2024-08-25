@@ -39,11 +39,11 @@
 
 <style>
     .content {
-        position: fixed;
+        /* position: fixed; */
         background-color: var(--color4);
         width: 100%;
-        bottom: 0;
-        left: 0;
+        /* bottom: 0;
+        left: 0; */
     }
 
     .cookie-modal {
