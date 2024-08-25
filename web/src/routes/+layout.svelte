@@ -1,10 +1,12 @@
 <script lang="ts">
     import Header from './Header.svelte';
     import Footer from './Footer.svelte';
+    import CookieModal from '$lib/components/CookieModal.svelte';
     import "$lib/styles.css";
 </script>
 
 <main>
+    <CookieModal />
     <Header />
     <div class="content">
         <div class="inner-content">
