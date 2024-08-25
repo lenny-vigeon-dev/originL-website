@@ -9,9 +9,8 @@
 
 <footer>
     <div class="inner-footer">
-        <ContactInfo title="Téléphone : " content={phoneNumber} />
-        <ContactInfo title="Email : " content={email} href={`mailto:${email}`} />
-        <ContactInfo title="Addresse : " content={address} href={`https://www.google.fr/maps/place/${address.replace(" ", "+")}`} />
+        <a href="/">Condition générale d'utilisation</a>
+        <a href="/">Condition générale de vente</a>
     </div>
 </footer>
 

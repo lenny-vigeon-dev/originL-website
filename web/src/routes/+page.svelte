@@ -4,7 +4,7 @@
     import Paragraph from '$lib/components/Paragraph.svelte';
 </script>
 
-    <a class="reservation" href="/reservation">Prendre rendez-vous</a>
+<a class="reservation" href="/reservation">Prendre rendez-vous</a>
 <Tile>
     <Paragraph title="Qu’est-ce que la Réflexologie ?">
         La réflexologie, issue de méthodes traditionnelles chinoises ancestrales,

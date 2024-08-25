@@ -16,11 +16,11 @@
                 <li class="dropdown">
                     <a>Mes pratiques</a>
                     <ul class="submenu">
-                        <li><a href="/">Réflexologie plantaire</a></li>
-                        <li><a href="/">Réflexologie palmaire</a></li>
-                        <li><a href="/">L’auriculothérapie</a></li>
-                        <li><a href="/">Dien Chan</a></li>
-                        <li><a href="/">Massage plantaire ou palmaire</a></li>
+                        <li><a href="/reflexologie-plantaire">Réflexologie plantaire</a></li>
+                        <li><a href="/reflexologie-palmaire">Réflexologie palmaire</a></li>
+                        <li><a href="/auriculotherapie">L’auriculothérapie</a></li>
+                        <li><a href="/dien-chan">Dien Chan</a></li>
+                        <li><a href="/massage-plantaire-ou-palmaire">Massage plantaire ou palmaire</a></li>
                     </ul>
                 </li>
                 <a href="/reservation">Prendre rendez-vous</a>

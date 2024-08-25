@@ -10,10 +10,10 @@
     <div class="content">
         <div class="inner-content">
             <slot />
+            <Footer />
         </div>
     </div>
     <CookieModal />
-    <!-- <Footer /> -->
 </main>
 
 <style>
