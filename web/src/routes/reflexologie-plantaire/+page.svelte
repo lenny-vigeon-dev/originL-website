@@ -16,7 +16,7 @@
         </p>
     </div>
 </Tile>
-<Tile>
+<Tile bg_color="transparent">
     <p>
         Elle s’intègre aussi parfaitement dans le cadre de soins de support pour les
         personnes qui ressentent d’importantes tensions. Elle est pratiquée à la fois dans les

@@ -5,6 +5,10 @@
     import "$lib/styles.css";
 </script>
 
+<svelte:head>
+  <title>LR - OriginL</title>
+</svelte:head>
+
 <main>
     <Header />
     <div class="content">
@@ -39,13 +43,13 @@
     }
 
     .inner-content {
-        padding: 1em;
+        margin: 1em 1em;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 2em;
-        width: 100%;
+        /* width: 100%; */
         max-width: 100em;
     }
 </style>

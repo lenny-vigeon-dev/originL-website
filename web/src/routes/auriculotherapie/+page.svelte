@@ -25,7 +25,7 @@
         </p>
     </div>
 </Tile>
-<Tile>
+<Tile bg_color="transparent">
     <p>
         Elle permet une prise en charge très efficace des douleurs et
         troubles émotionnels. En suivi de séance, la facilité d’accessibilité

@@ -34,7 +34,8 @@
 
 <style>
     img {
-        height: 50%;
+        /* height: 50%; */
+        width: 30em;
     }
 
     p {

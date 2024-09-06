@@ -18,7 +18,7 @@
 <style>
     footer {
         width: 100%;
-        background-color: var(--color4);
+        background-color: var(--color5);
     }
 
     .inner-footer {

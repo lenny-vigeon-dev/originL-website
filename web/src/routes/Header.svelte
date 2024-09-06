@@ -34,7 +34,11 @@
 <style>
     header {
         width: 100%;
-        background-color: var(--color4);
+        background-color: var(--color5);
+    }
+
+    nav {
+        padding-right: 1em;
     }
     .inner-header {
         display: flex;

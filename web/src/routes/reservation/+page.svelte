@@ -15,7 +15,7 @@
     <ContactInfo title="Email : " content={email} href={`mailto:${email}`} />
     <ContactInfo title="Addresse : " content={address} href={`https://www.google.fr/maps/place/${address.replace(" ", "+")}`} />
 </Tile>
-<Tile>
+<Tile bg_color="transparent">
     <p>Une séance dure environ 1h  dont 30 à 40 minutes de massage.</p>
     <p>(Prévoir 1h30 pour la première séance)</p>
 </Tile>
@@ -25,7 +25,7 @@
         la personne, je pourrais être amenée à pratiquer également en réflexologie
         auriculaire ou palmaire.</p>
 </Tile>
-<Tile>
+<Tile bg_color="transparent">
     <p>La durée annoncée pour chaque prestation est estimative et ne prend pas en
         compte le temps d’installation et d’échange préalable. Les personnes devront
         prévoir environ 20 minutes supplémentaires pour les temps d’installation et fin
