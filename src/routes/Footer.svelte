@@ -9,8 +9,8 @@
 
 <footer>
     <div class="inner-footer">
-        <a href="/">Conditions générale d'utilisation</a>
-        <a href="/">Conditions générale de vente</a>
+        <a href="/">Conditions générales d'utilisation</a>
+        <a href="/">Conditions générales de vente</a>
         <a href="/">Mentions légales</a>
     </div>
 </footer>
@@ -27,5 +27,13 @@
         justify-content: space-around;
         gap: 2em;
         padding: 1em;
+    }
+
+    @media (max-width: 600px) {
+        .inner-footer {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5em;
+        }
     }
 </style>

@@ -1,16 +1,15 @@
 <script lang="ts">
+    import PracticeTemplate from '$lib/components/PracticeTemplate.svelte';
     import Tile from '$lib/components/Tile.svelte';
-    import TileContainer from '$lib/components/TileContainer.svelte';
-    import PricingTile from '$lib/components/PricingTile.svelte';
-    import ContactInfo from '$lib/components/ContactInfo.svelte';
+    import PicText from '$lib/components/PicText.svelte';
+    import TextTile from '$lib/components/TextTile.svelte';
 
 </script>
 
-<h1>Massage plantaire ou palmaire</h1>
-<Tile>
-    <div class="img-content">
-        <img src="massage_plantaire_ou_palmaire.png" alt="Dien Chan" />
-        <p>
+<PracticeTemplate title="Massage plantaire ou palmaire">
+    <Tile>
+        <PicText img_path="massage_plantaire_ou_palmaire.png"
+        img_alt="Massage plantaire ou palmaire" img_width="40vw">
             Cette prestation a pour vocation d’offrir un véritable
             moment de détente à l’une ou l’autres de ces parties du corps
             que sont les pieds ou les mains, sollicitées tout au long de la journée.
@@ -27,36 +26,6 @@
             réguler l’organisme et à améliorer la qualité du sommeil.
             Il détend la masse musculaire des mains,
             extrêmement sollicité dans la vie quotidienne.
-        </p>
-    </div>
-</Tile>
-
-
-<style>
-    img {
-        /* height: 50%; */
-        width: 30em;
-    }
-
-    p {
-        text-align: justify;
-        font-size: 1.5em;
-        margin-right: 2em;
-    }
-
-    h1 {
-        /* position: sticky; */
-        text-align: center;
-        color: var(--color4);
-        font-size: 6em;
-    }
-
-    .img-content {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 5em;
-    }
-
-</style>
+        </PicText>
+    </Tile>
+</PracticeTemplate>

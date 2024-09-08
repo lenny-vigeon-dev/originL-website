@@ -43,4 +43,15 @@
         width: 100%;
         margin-inline: 3em;
     }
+
+    @media (max-width: 800px) {
+        h2 {
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1em;
+            margin-inline: 1em;
+        }
+    }
 </style>

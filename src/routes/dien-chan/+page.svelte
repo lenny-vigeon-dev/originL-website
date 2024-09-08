@@ -1,16 +1,14 @@
 <script lang="ts">
+    import PracticeTemplate from '$lib/components/PracticeTemplate.svelte';
     import Tile from '$lib/components/Tile.svelte';
-    import TileContainer from '$lib/components/TileContainer.svelte';
-    import PricingTile from '$lib/components/PricingTile.svelte';
-    import ContactInfo from '$lib/components/ContactInfo.svelte';
-
+    import PicText from '$lib/components/PicText.svelte';
+    import TextTile from '$lib/components/TextTile.svelte';
 </script>
 
-<h1>Dien Chan</h1>
-<Tile>
-    <div class="img-content">
-        <img src="dien_chan.png" alt="Dien Chan" />
-        <p>
+<PracticeTemplate title="Dien Chan">
+    <Tile>
+        <PicText img_path="dien_chan.png"
+        img_alt="Dien Chan" img_width="35vw">
             Dien Chan est une méthode développée dans les années 1980
             par le professeur Bui Quoc Chau.
             <br><br>
@@ -19,35 +17,6 @@
             avec des techniques manuelles. Cette technicité induit une stimulation
             sensorielle sur le visage et est tout à fait
             adaptée pour tonifier le visage.
-        </p>
-    </div>
-</Tile>
-
-
-<style>
-    img {
-        width: 50%;
-    }
-
-    p {
-        text-align: justify;
-        font-size: 1.5em;
-        margin-right: 2em;
-    }
-
-    h1 {
-        /* position: sticky; */
-        text-align: center;
-        color: var(--color4);
-        font-size: 6em;
-    }
-
-    .img-content {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 5em;
-    }
-
-</style>
+        </PicText>
+    </Tile>
+</PracticeTemplate>

@@ -4,10 +4,6 @@
     import Paragraph from '$lib/components/Paragraph.svelte';
 </script>
 
-<div class="reservation-div">
-    <div class="offset-div"></div>
-    <a class="reservation" href="/reservation">Prendre rendez-vous</a>
-</div>
 <Tile>
     <Paragraph title="Qu’est-ce que la Réflexologie ?">
         La réflexologie, issue de méthodes traditionnelles chinoises ancestrales,
@@ -47,6 +43,9 @@
 <div style="width: 100%;">
     <iframe title="Cabinet location" width="100%" height="800px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42027.80112133329!2d2.6676070417730133!3d48.82506841788993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x800f49a2c705615d%3A0x83891d781e24f1da!2sLaetitia%20RIZZELLO!5e0!3m2!1sfr!2sfr!4v1723067000812!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
+<Tile>
+    <a class="reservation" href="/reservation">Prendre rendez-vous</a>
+</Tile>
 
 <!-- <TileContainer>
     <Tile>
@@ -58,29 +57,16 @@
 </TileContainer> -->
 
 <style>
-    .reservation-div {
-        position: sticky;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 3em;
-        border-radius: 0.1em;
-        top: 0;
-        right: 0;
-        padding: 0.4em;
-        transition: color 0.5s ease;
-    }
-
-    .offset-div {
-        height: 0.1em;
-    }
     .reservation {
+        width: 100%;
         color: var(--color4);
         background-color: var(--color5);
         padding: 0.3em;
-        box-shadow: 0px 0px 0px 0.02em black;
+        /* box-shadow: 0px 0px 0px 0.02em black; */
 	    transition: color 0.2s ease; /* Add a smooth color transition on hover */
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: bold   ;
     }
     .reservation:hover {
         color: var(--color3);

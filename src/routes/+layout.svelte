@@ -51,5 +51,6 @@
         gap: 2em;
         /* width: 100%; */
         max-width: 100em;
+        min-width: 0;
     }
 </style>
