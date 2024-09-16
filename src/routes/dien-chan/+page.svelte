@@ -8,7 +8,7 @@
 <PracticeTemplate title="Dien Chan">
     <Tile>
         <PicText img_path="dien_chan.png"
-        img_alt="Dien Chan" img_width="35vw">
+        img_alt="Dien Chan" img_width="35vw" img_max_width="35%">
             Dien Chan est une méthode développée dans les années 1980
             par le professeur Bui Quoc Chau.
             <br><br>

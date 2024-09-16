@@ -62,4 +62,8 @@
         border-radius: 5px;
         cursor: pointer;
     }
+
+    p {
+        color: var(--color1)
+    }
 </style>

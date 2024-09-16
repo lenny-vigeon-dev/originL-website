@@ -9,7 +9,7 @@
 <PracticeTemplate title="Réflexologie palmaire">
     <Tile>
         <PicText img_path="reflexo_palmaire.png"
-        img_alt="Réflexologie palmaire" img_width="35vw">
+        img_alt="Réflexologie palmaire" img_width="30%">
             Comme pour le pied, les différentes parties du corps se
             retrouvent également en correspondance sur l’ensemble de
             la main. La réflexologie palmaire consiste en la stimulation

@@ -8,7 +8,7 @@
 <PracticeTemplate title="L’auriculothérapie">
     <Tile>
         <PicText img_path="auriculotherapie.png"
-        img_alt="L’auriculothérapie" img_width="35vw">
+        img_alt="L’auriculothérapie" img_width="30%">
             La réflexologie auriculaire consiste en la stimulation de points et
             zones réflexes situés sur l’oreille réalisée à l’aide d’un stylet.
             <br><br>
