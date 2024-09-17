@@ -12,7 +12,7 @@
 
 <Tile>
     <h2>Prise de rendez-vous:</h2>
-    <ContactInfo title="Téléphone : " content={phoneNumber} />
+    <ContactInfo title="Téléphone : " content={phoneNumber} href={`tel:${phoneNumber}`}/>
     <ContactInfo title="Email : " content={email} href={`mailto:${email}`} />
     <ContactInfo title="Addresse : " content={address} href={`https://www.google.fr/maps/place/${address.replace(" ", "+")}`} />
 </Tile>
@@ -25,7 +25,8 @@
         prévoir environ 20 minutes supplémentaires pour les temps d’installation et fin
         de séance.
         <br><br>
-        <strong><h3>Première séance:</h3></strong>
+        <strong>Première séance:</strong>
+        <br>
         Lors de notre première séance, qui durera un peu plus longtemps (environ 1h30),
         je vous inviterai à partager les raisons qui vous amènent à consulter :
         votre état de santé général, votre environnement, le stress, la qualité de votre sommeil, etc.
@@ -46,14 +47,15 @@
 </Tile>
 
 <style>
-    p {
-        text-align: justify;
-        font-size: 1.5em;
-    }
 
     h2 {
-        text-align: center;
-        font-size: 2em;
+        font-size: 3em;
+    }
+
+    @media (max-width: 800px) {
+        h2 {
+            font-size: 2em;
+        }
     }
 
 </style>

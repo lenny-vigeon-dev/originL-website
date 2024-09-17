@@ -32,6 +32,7 @@
     @media (max-width: 800px) {
         h2 {
             font-size: 2em;
+            text-align: center;
         }
     }
 </style>

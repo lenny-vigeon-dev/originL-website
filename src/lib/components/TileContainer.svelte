@@ -8,9 +8,9 @@
         height: 100%;
         display: grid;
         grid-auto-columns: minmax(30em, 80em);
-        grid-auto-rows: minmax(30em, 30em);
+        /* grid-auto-rows: minmax(30em, 30em); */
         gap: 1em;
-        grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(28em, 1fr));
     }
     @media (max-width: 800px) {
         .tiles {

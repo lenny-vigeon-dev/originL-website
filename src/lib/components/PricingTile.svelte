@@ -20,23 +20,28 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        text-align: center;
         width: 100%;
         height: 100%;
-        text-align: center;
+        gap: 2em;
         /* align-items: center; */
     }
 
     p {
         font-size: 1.5em;
         width: 100%;
-        margin-inline: 3em;
+        font-size: clamp(0.5em, 5vw, 1.5em);
+        /* margin-inline: 3em; */
     }
 
     .title {
         font-size: 3em;
+        color: var(--color4);
+        font-size: clamp(1em, 8vw, 3em);
     }
 
     .price {
         font-size: 4em;
+        font-size: clamp(1em, 10vw, 4em);
     }
 </style>
