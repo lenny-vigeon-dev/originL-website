@@ -14,12 +14,10 @@
             points et zones réflexes situés sur l’ensemble du pied.
             <br><br>
             Elle induit une relaxation profonde et permettrait ainsi de
-            réduire l’anxiété.
+            réduire les effets de l’anxiété.
             <br><br>
-            Elle s’intègre aussi parfaitement dans le cadre de soins de support pour les
-            personnes qui ressentent d’importantes tensions. Elle est pratiquée à la fois dans les
-            centres de bien-être tels que les centres de Thalasso, SPA ou centres de remise en
-            forme, mais également en milieu hospitalier.
+            Elle s'intègre également très bien dans les approches visant à aider
+            les personnes qui éprouvent des tensions importantes.
         </PicText>
     </Tile>
 </PracticeTemplate>
