@@ -32,6 +32,7 @@
         position: absolute;
         background-color: var(--color1);
         width: 100%;
+        z-index: 1000;
     }
 
 

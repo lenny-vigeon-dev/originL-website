@@ -2,11 +2,12 @@
     import "$lib/styles.css";
 
     export let title: string;
+    export let background_color: string = "transparent";
     // export let content: string;
 
 </script>
 
-<div class="paragraph">
+<div class="paragraph" style="background-color: {background_color}">
     <div class="inner">
         <h2>{title}</h2>
         <slot/>
