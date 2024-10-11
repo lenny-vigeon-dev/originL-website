@@ -6,36 +6,33 @@
 
 <Tile>
     <Paragraph title="Qu’est-ce que la Réflexologie ?">
-        La réflexologie, issue de méthodes traditionnelles chinoises ancestrales,
-        est une technique de massage par légères pressions manuelles
-        sur des zones précises de notre corps.<br><br>
+        La réflexologie, est une technique de massage par
+        légères pressions manuelles sur des zones précises de notre corps.<br><br>
 
         Chaque partie de notre corps relie une « zone réflexe »
         que l’on retrouve notamment au niveau des pieds, des mains, des oreilles
         ou encore du visage.<br><br>
 
-        La Réflexologie permet d’harmoniser le corps et le mental,
-        de libérer les tensions dans notre organisme, pour nous aider à retrouver
+        La Réflexologie permet de libérer les tensions, pour nous aider à retrouver
         un mieux-être au quotidien, tant sur le plan physique qu’émotionnel.
     </Paragraph>
 </Tile>
 <Tile bg_color="transparent">
     <Paragraph title="Les bienfaits de la Réflexologie">
         Relaxer, Apaiser, Équilibrer…<br><br>
-        Bien au-delà des bienfaits relaxant du massage, la réflexologie
-        apaise les tensions et contribue à rétablir l’équilibre dont le corps
-        a besoin pour réguler les fonctions de l’organisme telles que la respiration,
-        les fonctions digestives, le sommeil ou encore la pensée.
+        Au-dela des effets immédiats de détente qu'elle procure,
+        la réfléxologie est une méthode naturelle accessible à tous,
+        qui apporte de nombreux bienfaits. La réflexologie peut
+        favoriser le bien-être au quotidien tant sur le plan physique qu'émotionnel.
     </Paragraph>
 </Tile>
 <Tile>
     <Paragraph title="Pour quoi ? Pour qui ?">
-        La réflexologie permet de prévenir certains déséquilibres
-        que peut engendrer le stress sur notre organisme.
+        La réfléxologie s'inscrit dans une démarche de bien-être et
+        permet de prévenir certains déséquilibres
+        que peuvent engendrer les effets du stress.
         Elle s’adresse à toute personne qui ressent le besoin de
-        relâcher des tensions tant sur le plan physique que psychique.<br><br>
-        A noter cependant que la réflexologie est déconseillée aux personnes souffrant de
-        certaines pathologies telles que le diabète, phlébite …<br><br>
+        relâcher des tensions ressenti à différent niveau.<br><br>
         <strong>En cas de doute, il convient de demander un avis médical avant toute séance.</strong>
     </Paragraph>
 </Tile>
