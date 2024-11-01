@@ -6,8 +6,24 @@
 </script>
 
 <div class="practice-card" style="background-image: url({background})">
-    <h2>{title}</h2>
-    <a href={url}>En savoir plus</a>
+    <div class="split">
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+        <h2>{title}</h2>
+    </div>
+    <div class="split">
+        <a href={url}>En savoir plus</a>
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+    </div>
 </div>
 
 <style>
@@ -15,29 +31,57 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        /* justify-content: space-around; */
         width: 100%;
-        height: 30em;
+        height: 100%;
 
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        padding: 1em;
-        color: white;
         text-align: center;
     }
 
+    .split {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+        /* gap: 4em; */
+    }
+
     h2 {
-        font-size: 2em;
-        color: var(--color4);
+        font-size: calc(100vw / 50);
+        font-weight: bold;
+        color: var(--color5);
+        text-shadow: 1em;
     }
 
     a {
-        background-color: var(--color4);
+        background-color: var(--color3);
         color: white;
         border: none;
         padding: 0.5em 1em;
         border-radius: 0.5em;
         cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    a:hover {
+        background-color: var(--color4);
+    }
+
+    @media (max-width: 1000px) {
+        h2 {
+            font-size: min(3em, calc(100vw / 15));
+        }
+
+        .practice-card {
+            height: 130vw;
+        }
+
     }
 </style>

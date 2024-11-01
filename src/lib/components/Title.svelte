@@ -3,12 +3,13 @@
 
     export let title: string;
     export let background_color: string = "transparent";
+    export let position: string = "left";
     // export let content: string;
 
 </script>
 
 <div class="paragraph" style="background-color: {background_color}">
-    <div class="inner">
+    <div class="inner" style="text-align: {position}; align-items: {position};">
         <h2>{title}</h2>
         <slot/>
     </div>

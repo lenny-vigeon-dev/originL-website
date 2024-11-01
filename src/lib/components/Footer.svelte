@@ -28,7 +28,7 @@
         padding: 1em;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
         .inner-footer {
             flex-direction: column;
             align-items: center;

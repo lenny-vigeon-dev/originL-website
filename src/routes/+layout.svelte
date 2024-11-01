@@ -3,6 +3,16 @@
     import Footer from '../lib/components/Footer.svelte';
     import CookieModal from '$lib/components/CookieModal.svelte';
     import "$lib/styles.css";
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+        window.addEventListener('resize', () => {
+          // Scroll to bottom if already at the bottom
+          if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+            window.scrollTo(0, document.body.scrollHeight);
+          }
+        });
+    });
 </script>
 
 <svelte:head>

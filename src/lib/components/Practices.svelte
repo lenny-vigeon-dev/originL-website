@@ -1,12 +1,21 @@
 <script lang="ts">
     import "$lib/styles.css";
     import PracticeCard from "./PracticeCard.svelte";
+    import { onMount } from 'svelte';
+    import { addOnScreenTrigger } from "$lib/fadein";
+    import Title from "./Title.svelte";
+
+    onMount(() => {
+        addOnScreenTrigger("[fade-in]");
+    });
+
 </script>
 
 <section class="parent">
-   <div class="description">
-        <h1>Mes pratiques</h1>
-        <p>Hello world</p>
+   <div fade-in class="description">
+        <Title title="Mes pratiques" position="center">
+          <p>Grâce à mes différentes pratiques, je vous propose un accompagnement personnalisé, pensé pour répondre à vos besoins.</p>
+        </Title>
    </div>
    <div class="practice">
         <PracticeCard title="Réflexologie plantaire" background="reflexo_plantaire.png" url="/reflexologie-plantaire"/>
@@ -18,20 +27,46 @@
 </section>
 
 <style>
-    .parent {
+  .parent {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap; /* Allow items to wrap */
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+    background-color: var(--color1);
+  }
+
+    .description {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        background-color: var(--color1);
+        /* width: 100%; */
     }
-
     .practice {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         width: 100%;
+        height: calc(100vw / 3.5);
     }
+
+    [fade-in] {
+      opacity: 0;
+      transition: 1s;
+    }
+
+    p {
+      font-size: 1em;
+    }
+
+    @media (max-width: 1000px) {
+        .practice {
+            flex-direction: column;
+            height: auto;
+        }
+    }
+
 </style>
