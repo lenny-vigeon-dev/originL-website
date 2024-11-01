@@ -1,6 +1,5 @@
 <script lang="ts">
     import "$lib/styles.css";
-    import ContactInfo from '../lib/components/ContactInfo.svelte';
 
     const address: string = "44 Bis Avenue du Clos saint Georges, Bussy-Saint-Georges 77600";
     const phoneNumber: string = "+33 7 82 00 81 52";
@@ -29,7 +28,7 @@
         padding: 1em;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
         .inner-footer {
             flex-direction: column;
             align-items: center;

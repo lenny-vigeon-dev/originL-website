@@ -6,11 +6,12 @@
     export let img_alt: string;
     export let img_width: string = "50%";
     export let img_max_width: string = "100%";
+    export let background_color: string = "transparent";
 
 </script>
 
 
-<div class="img-content" style="--pic-text-img-width: {img_width}; --pic-text-img-max-width: {img_max_width}">
+<div class="img-content" style="--pic-text-img-width: {img_width}; --pic-text-img-max-width: {img_max_width}; background-color: {background_color}">
     <img src={img_path} alt={img_alt} class={left ? "float-left" : "float-right"} />
     <p><slot/></p>
 </div>
