@@ -7,6 +7,7 @@
 </script>
 
 <BasicContainer>
+
     <Tile>
         <Paragraph title="Présentation">
             Laetitia Rizzello Réflexologue certifié RNCP en 2024
@@ -20,14 +21,10 @@
                 j’ai toujours ressenti beaucoup d’empathie envers les personnes
                 et les êtres vivants en général.
                 <br><br>
-                Plus je me suis intéressée à la psychologie puis aux méthodes naturelles
+                Plus tard, je me suis intéressée aux méthodes naturelles
                 car j’ai toujours eu plaisir à prendre soin de mon entourage.
-                J’accorde beaucoup d’importance à l’équilibre en général;
-                aussi bien sur le plan physique,
-                physiologique que psychologique : manger équilibré,
-                pratiquer une activité physique régulière ou encore prendre un temps pour soi.
                 <br><br>
-                L’importance que j’attache au bienêtre en général,
+                L’importance que j’attache au bien-être en général,
                 mêlé à mon expérience personnelle, m’ont amené à m’intéresser
                 à différentes techniques naturelles dont la réflexologie fait partie.
                 <br><br>
