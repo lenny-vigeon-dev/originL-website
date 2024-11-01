@@ -2,15 +2,16 @@
     import PracticeTemplate from '$lib/components/PracticeTemplate.svelte';
     import Tile from '$lib/components/Tile.svelte';
     import PicText from '$lib/components/PicText.svelte';
+    import TextTile from '$lib/components/TextTile.svelte';
     import BasicContainer from '$lib/components/BasicContainer.svelte';
 </script>
 
 <BasicContainer>
-    <PracticeTemplate title="Dien Chan">
+    <PracticeTemplate title="Réfléxologie faciale">
         <Tile>
-            <PicText img_path="dien_chan.png"
-            img_alt="Dien Chan" img_width="35vw" img_max_width="35%">
-                Dien Chan est une méthode développée dans les années 1980
+            <PicText img_path="reflexo_faciale.png"
+            img_alt="Réfléxologie faciale" img_width="35vw" img_max_width="35%">
+                La réfléxologie faciale est une méthode développée dans les années 1980
                 par le professeur Bui Quoc Chau.
                 <br><br>
                 Elle se pratique généralement à l’aide d’un stylet

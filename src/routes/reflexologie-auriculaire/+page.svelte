@@ -3,30 +3,26 @@
     import Tile from '$lib/components/Tile.svelte';
     import PicText from '$lib/components/PicText.svelte';
     import TextTile from '$lib/components/TextTile.svelte';
-    import BasicContainer from '$lib/components/BasicContainer.svelte';
+  import BasicContainer from '$lib/components/BasicContainer.svelte';
 </script>
 
 <BasicContainer>
-    <PracticeTemplate title="L’auriculothérapie">
+    <PracticeTemplate title="Refléxologie auriculaire">
         <Tile>
-            <PicText img_path="auriculotherapie.png"
-          img_alt="L’auriculothérapie" img_width="30%">
+            <PicText img_path="reflexo_auriculaire.png"
+            img_alt="Refléxologie auriculaire" img_width="30%">
                 La réflexologie auriculaire consiste en la stimulation de points et
                 zones réflexes situés sur l’oreille réalisée à l’aide d’un stylet.
-                <br><br>
-                Elle fut découverte en 1951 par un médecin français,
-                le Dr  Paul Nogier qui mit en évidence une correspondance
-                de tous les points du corps au niveau de l’oreille,
-                représentant ainsi le schéma d’un fœtus inversé.
                 <br><br>
                 La réflexologie auriculaire se pratique à l’aide d’un stylet à bout rond
                 et se pratique sans aiguille (il ne s’agit pas d’acupuncture).
             </PicText>
         </Tile>
         <TextTile bg_color="transparent">
-            Elle permet une prise en charge très efficace des douleurs et
-            troubles émotionnels. En suivi de séance, la facilité d’accessibilité
-            de l’oreille permet de pratiquer des autostimulations avec aisance et discrétion.
+            Elle apporte une réponse efficace pour atténuer les inconforts physiques
+            et les perturbations émotionnelles. Après les séances, l'oreille étant
+            facilement accessible, il est possible de pratiquer des autostimulations
+            avec simplicité et discrétion.
         </TextTile>
     </PracticeTemplate>
 </BasicContainer>
