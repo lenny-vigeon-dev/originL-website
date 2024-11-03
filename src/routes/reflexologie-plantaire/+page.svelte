@@ -8,19 +8,16 @@
 </script>
 
 <BasicContainer>
-    <PracticeTemplate title="Réflexologie plantaire">
-        <Tile>
-            <PicText img_path="reflexo_plantaire.png"
-            img_alt="Réflexologie plantaire" img_width="30%">
-                La réflexologie plantaire consiste en la stimulation de
-                points et zones réflexes situés sur l’ensemble du pied.
-                <br><br>
-                Elle induit une relaxation profonde et permettrait ainsi de
-                réduire les effets de l’anxiété.
-                <br><br>
-                Elle s'intègre également très bien dans les approches visant à aider
-                les personnes qui éprouvent des tensions importantes.
-            </PicText>
-        </Tile>
+    <PracticeTemplate title="Réflexologie plantaire" background="reflexo_plantaire.png">
+        <TextTile bg_color="var(--color5)">
+            La réflexologie plantaire consiste en la stimulation de
+            points et zones réflexes situés sur l’ensemble du pied.
+            <br><br>
+            Elle induit une relaxation profonde et permettrait ainsi de
+            réduire les effets de l’anxiété.
+            <br><br>
+            Elle s'intègre également très bien dans les approches visant à aider
+            les personnes qui éprouvent des tensions importantes.
+        </TextTile>
     </PracticeTemplate>
 </BasicContainer>

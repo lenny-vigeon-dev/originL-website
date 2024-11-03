@@ -11,6 +11,7 @@
         /* grid-auto-rows: minmax(30em, 30em); */
         gap: 1em;
         grid-template-columns: repeat(auto-fill, minmax(28em, 1fr));
+        margin: 1em 0;
     }
     @media (max-width: 800px) {
         .tiles {
