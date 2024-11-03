@@ -21,14 +21,15 @@
     }
 
     .inner-content {
-        margin: 1em 1em;
+        /* margin: 1em 1em; */
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 2em;
+        /* gap: 2em; */
         /* width: 100%; */
-        max-width: 100em;
+        /* max-width: 100em; */
         min-width: 0;
+        width: 100%;
     }
 </style>

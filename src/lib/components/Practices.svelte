@@ -58,9 +58,6 @@
       transition: 1s;
     }
 
-    p {
-      font-size: 1em;
-    }
 
     @media (max-width: 1000px) {
         .practice {

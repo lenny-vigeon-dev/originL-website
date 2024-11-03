@@ -80,7 +80,7 @@
         }
 
         .practice-card {
-            height: 130vw;
+            height: 50vw;
         }
 
     }
