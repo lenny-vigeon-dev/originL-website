@@ -62,6 +62,9 @@
     .review {
         min-width: 100%; /* Each review takes full width of the container */
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         box-sizing: border-box;
         text-align: center;
         justify-content: center;
@@ -71,6 +74,7 @@
         background-color: var(--color4);
         height: 2px;
         width: 5%;
+        margin: 1em 0;
 
     }
 
