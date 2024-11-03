@@ -39,7 +39,7 @@
     }
 
     .logo {
-        height: 5em;
+        height: 3em;
     }
 
     .homepage-button {
