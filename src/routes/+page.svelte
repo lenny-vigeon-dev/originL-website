@@ -38,8 +38,8 @@
         <img src="bg1.jpg" aria-hidden="true" alt="Page Background">
     </div>
     <div fade-in class="fade-in-title">
-        <h1>Laetitia Rizzello</h1>
-        <h2>Réflexologue</h2>
+        <h1 class="title-name">Laetitia Rizzello</h1>
+        <h2 class="title-profession">Réflexologue</h2>
     </div>
     <Practices />
     <PicText2 left={true} img_path="laetitia.jpg" img_alt="Laetitia Rizzello" background_color_img="var(--color5)">
@@ -71,9 +71,8 @@
         </div>
     </PicText2>
     <ReviewBloc reviews={[
-        {"content": "I like pastas.", "author": "Pastas Reviewer Enthusiast"},
-        {"content": "I like pastas.", "author": "Pastas Reviewer Enthusiast"},
-        {"content": "I like pastas.", "author": "Pastas Reviewer Enthusiast"},
+        {"content": "Laetitia est une personne extraordinaire et humaine. Les séances se déroulent toujours selon mes besoins. C’est une personne très à l’écoute et ne vous jugera jamais. Elle a pour objectif de vous faire sentir mieux dans votre corps et votre esprit. C’est la meilleure dans le secteur. Je recommande +++", "author": "Léa Bouthors"},
+        {"content": "TOP ! je recommande. On m'a conseillé les services de Laëtitia et je ne regrette pas. Très douce, a l'écoute, Laëtitia a su instauré un climat de confiance.", "author": "Sandrine Ferreira"},
     ]} />
    <Footer/>
 </div>
@@ -131,5 +130,14 @@
       width: 100%;
       height: 100vh;
       object-fit: cover;
+  }
+
+  @media (max-width: 800px) {
+      .fade-in-title h1 {
+          font-size: 3rem;
+      }
+      .fade-in-title h2 {
+          font-size: 2rem;
+      }
   }
 </style>

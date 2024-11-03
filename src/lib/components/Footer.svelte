@@ -18,6 +18,7 @@
     footer {
         width: 100%;
         background-color: var(--color5);
+        /* margin-top: 1em; */
     }
 
     .inner-footer {

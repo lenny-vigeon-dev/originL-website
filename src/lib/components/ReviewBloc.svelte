@@ -31,6 +31,7 @@
 </script>
 
 <section class="review-carousel">
+    <div class="top-line"></div>
     <Title title="Avis" position="center" />
     <div class="reviews">
         {#each reviews as review}
@@ -52,6 +53,12 @@
       background-color: var(--color1);
     }
 
+    .top-line {
+        background-color: var(--color5);
+        height: 10px;
+        width: 100%;
+    }
+
     .reviews {
       display: flex;
       width: 100%;
@@ -62,6 +69,9 @@
     .review {
         min-width: 100%; /* Each review takes full width of the container */
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         box-sizing: border-box;
         text-align: center;
         justify-content: center;
@@ -71,6 +81,7 @@
         background-color: var(--color4);
         height: 2px;
         width: 5%;
+        margin: 1em 0;
 
     }
 

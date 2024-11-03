@@ -47,6 +47,14 @@
         .parent {
             flex-direction: column;
         }
+
+        .img-side {
+            padding: 2em;
+        }
+
+        .content-side {
+            padding: 2em;
+        }
     }
 
 </style>

@@ -15,14 +15,14 @@
     .outer {
         display: flex;
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
 
         /* border-radius: 0.4em;
         box-shadow: 0px 0px 1em 0.1em black; */
     }
     .inner {
         flex: 1 1;
-        padding: 1em;
+        padding: 2em;
         display: flex;
         flex-direction: column;
         align-items: center;
