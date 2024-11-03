@@ -38,8 +38,8 @@
         <img src="bg1.jpg" aria-hidden="true" alt="Page Background">
     </div>
     <div fade-in class="fade-in-title">
-        <h1>Laetitia Rizzello</h1>
-        <h2>Réflexologue</h2>
+        <h1 class="title-name">Laetitia Rizzello</h1>
+        <h2 class="title-profession">Réflexologue</h2>
     </div>
     <Practices />
     <PicText2 left={true} img_path="laetitia.jpg" img_alt="Laetitia Rizzello" background_color_img="var(--color5)">
@@ -130,5 +130,14 @@
       width: 100%;
       height: 100vh;
       object-fit: cover;
+  }
+
+  @media (max-width: 800px) {
+      .fade-in-title h1 {
+          font-size: 3rem;
+      }
+      .fade-in-title h2 {
+          font-size: 2rem;
+      }
   }
 </style>

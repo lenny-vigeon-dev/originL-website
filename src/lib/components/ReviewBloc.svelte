@@ -31,6 +31,7 @@
 </script>
 
 <section class="review-carousel">
+    <div class="top-line"></div>
     <Title title="Avis" position="center" />
     <div class="reviews">
         {#each reviews as review}
@@ -50,6 +51,12 @@
       overflow: hidden; /* Hide overflow to create sliding effect */
       position: relative;
       background-color: var(--color1);
+    }
+
+    .top-line {
+        background-color: var(--color5);
+        height: 10px;
+        width: 100%;
     }
 
     .reviews {
