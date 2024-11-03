@@ -30,7 +30,7 @@
 {#if cookieAccepted === false}
     <div class="content">
         <div class="cookie-modal">
-            <p>Ce site ne récupère pas d'informations personnelles sur ces utilisateurs.</p>
+            <p>Ce site ne récupère pas d'informations personnelles sur ses utilisateurs.</p>
             <button on:click={() => {cookieAccepted = setCookieStatus(true)}}>OK</button>
         </div>
     </div>

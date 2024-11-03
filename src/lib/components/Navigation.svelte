@@ -1,6 +1,7 @@
 <script lang="ts">
     import "$lib/styles.css";
     import { onMount, onDestroy } from 'svelte';
+    import ASimily from "./ASimily.svelte";
 
     export let menuOpen = false;
     export let nav_elements: Record<string, string | Record<string, string>>;
@@ -30,9 +31,9 @@
 <nav class="fullsize-nav">
     <ul class="menu">
         {#each Object.keys(nav_elements) as key}
-            <li>
+            <li class="dropdown">
                 {#if typeof nav_elements[key] === "object"}
-                    <a>{key}</a>
+                    <ASimily>{key}</ASimily>
                     <ul class="submenu">
                         {#each Object.keys(nav_elements[key]) as subkey}
                             <li><a href={nav_elements[key][subkey]}>{subkey}</a></li>
@@ -90,6 +91,7 @@
         background-color: var(--color1); /* Same background color as the main menu */
         transition: opacity 0.5s ease, max-height 0.5s ease; /* Smooth transition */
         border-radius: 0.4em;
+        z-index: 1000;
     }
 
     .submenu li {
@@ -108,7 +110,9 @@
     }
 
     /* Show submenu on hover */
-    .menu > li:hover .submenu {
+    .dropdown:hover .submenu,
+    .dropdown:focus,
+    .dropdown > ul > li > a:focus & .submenu {
 
         opacity: 1; /* Make it fully visible */
         max-height: 500px; /* Enough height to show all items, adjust if needed */
