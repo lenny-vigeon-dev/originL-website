@@ -3,6 +3,8 @@
     export let background: string;
     export let url: string;
 
+    import StylisedA from "./StylisedA.svelte";
+
 </script>
 
 <div class="practice-card" style="background-image: url({background})">
@@ -16,7 +18,8 @@
         <h2>{title}</h2>
     </div>
     <div class="split">
-        <a href={url}>En savoir plus</a>
+        <StylisedA href={url}>En savoir plus</StylisedA>
+        <!-- <a href={url}>En savoir plus</a> -->
         <div/>
         <div/>
         <div/>
@@ -58,20 +61,6 @@
         font-weight: bold;
         color: var(--color5);
         text-shadow: 1em;
-    }
-
-    a {
-        background-color: var(--color3);
-        color: white;
-        border: none;
-        padding: 0.5em 1em;
-        border-radius: 0.5em;
-        cursor: pointer;
-        transition: background-color 0.2s;
-    }
-
-    a:hover {
-        background-color: var(--color4);
     }
 
     @media (max-width: 1000px) {

@@ -18,7 +18,6 @@
         <Navigation nav_elements={NAV_ELEM} bind:menuOpen={menuOpen} />
     </div>
     <NavigationDropdown nav_elements={NAV_ELEM} bind:menuOpen={menuOpen} />
-
 </header>
 
 <style>

@@ -15,6 +15,10 @@
 </footer>
 
 <style>
+    a {
+        font-size: 1em;
+    }
+
     footer {
         width: 100%;
         background-color: var(--color5);
