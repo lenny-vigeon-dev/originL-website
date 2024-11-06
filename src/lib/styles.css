@@ -1,6 +1,21 @@
+@font-face {
+	font-family: 'Playfair Display';
+	src: url('/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Avenir Light';
+	src: url('/fonts/Avenir Light.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
 :root {
-	--font-body: normal normal normal 14px/1.79em futura-lt-w01-light,futura-lt-w05-light,sans-serif;
-	--font-mono: 'Fira Mono', monospace;
+	--font-title: 'Playfair Display';
+	--font-body: 'Avenir Light';
 	--color1: #f6efdc;
 	--color5: #f0e4c6;
 	--color2: #c7ba9a;
@@ -29,6 +44,18 @@ pre {
 	color: var(--color4);
 	margin: 0px;
 	padding: 0px;
+	/* font-family: var(--font-body); */
+}
+
+h1,
+h2 {
+	font-family: var(--font-title);
+}
+
+h3,
+h4,
+p,
+a {
 	font-family: var(--font-body);
 }
 
