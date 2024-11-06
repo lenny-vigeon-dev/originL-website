@@ -1,14 +1,27 @@
 <script lang="ts">
     import "$lib/styles.css";
     import { onMount, onDestroy } from 'svelte';
+    import StylisedA from "./StylisedA.svelte";
 
     export let menuOpen = false;
     export let nav_elements: Record<string, string | Record<string, string>>;
+
+    // onMount(() => {
+    //     $: if (menuOpen) {
+    //         const elem = document.querySelector(".nav");
+    //         elem?.ariaHidden = "false";
+    //     } else {
+    //         const elem = document.querySelector(".nav");
+    //         elem?.ariaHidden = "false";
+    //     }
 </script>
 
 {#if menuOpen}
     <nav class="nav">
         <ul class="menu">
+            <li>
+                <StylisedA href="/reservation">Prendre rendez vous</StylisedA>
+            </li>
             {#each Object.keys(nav_elements) as key}
                 <li>
                     {#if typeof nav_elements[key] === "object"}
@@ -28,6 +41,10 @@
 {/if}
 
 <style>
+    a {
+        font-size: 1em;
+    }
+
     .nav {
         position: absolute;
         background-color: var(--color1);
@@ -35,6 +52,9 @@
         z-index: 1000;
     }
 
+    p {
+        font-size: 1em;
+    }
 
     .menu {
         display: flex;

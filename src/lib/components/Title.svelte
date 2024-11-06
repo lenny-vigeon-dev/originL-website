@@ -9,7 +9,7 @@
 </script>
 
 <div class="paragraph" style="background-color: {background_color}">
-    <div class="inner" style="text-align: {position}; align-items: {position};">
+    <div class="inner" style="align-items: {position};">
         <h2>{title}</h2>
         <slot/>
     </div>
