@@ -8,6 +8,5 @@ export const NAV_ELEM: Record<string, string | Record<string, string>> = {
         "Massage plantaire ou palmaire": "/massage-plantaire-ou-palmaire"
     },
     "Tarifs": "/tarifs",
-    "Prendre rendez-vous": "/reservation",
     "A propos": "/about"
 }

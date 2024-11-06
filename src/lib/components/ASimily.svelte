@@ -13,7 +13,7 @@
 	    /* font-weight: bold; */
       background-color: transparent;
       padding: 0px;
-      border: none; 
+      border: none;
       margin: 0px;
       font-size: 1em;
       font-weight: 100;
@@ -21,7 +21,7 @@
 
     /* Mimic the <a> element's hover effect */
     .styled-button:hover,
-    .styled-button:focus {
+    .styled-button:focus {  
       color: var(--color2);
     }
 

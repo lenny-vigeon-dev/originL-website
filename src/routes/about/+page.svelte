@@ -2,21 +2,22 @@
     import Tile from '$lib/components/Tile.svelte';
     import Paragraph from '$lib/components/Paragraph.svelte';
     import PicText from '$lib/components/PicText.svelte';
+    import PicText2 from '$lib/components/PicText2.svelte';
     import Title from '$lib/components/Title.svelte';
     import BasicContainer from '$lib/components/BasicContainer.svelte';
 </script>
 
 <BasicContainer>
 
-    <Tile>
+    <Tile bg_color={"var(--color1)"}>
         <Paragraph title="Présentation">
             Laetitia Rizzello Réflexologue certifié RNCP en 2024
             (Ecole A Fleur de Peau à Paris)
         </Paragraph>
     </Tile>
-    <Tile>
-        <Title title="Mon parcours">
-            <PicText left={true} img_path="laetitia.jpg" img_alt="Laetitia Rizzello" img_max_width="30em">
+    <PicText2 left={true} img_path="laetitia.jpg" img_alt="Laetitia Rizzello" background_color_img="var(--color5)">
+        <Title title="Mon parcours" position="center">
+            <p>
                 Depuis aussi loin que je me souvienne,
                 j’ai toujours ressenti beaucoup d’empathie envers les personnes
                 et les êtres vivants en général.
@@ -33,7 +34,7 @@
                 <br><br>
                 Je souhaite désormais accompagner mes futurs clients pour les aider
                 à retrouver un mieux-être au quotidien.
-            </PicText>
+            </p>
         </Title>
-    </Tile>
+    </PicText2>
 </BasicContainer>
