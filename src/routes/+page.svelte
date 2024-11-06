@@ -1,12 +1,13 @@
 <script lang="ts">
     import Practices from "$lib/components/Practices.svelte";
     import Title from "$lib/components/Title.svelte";
-    import PicText from "$lib/components/PicText.svelte";
     import PicText2 from "$lib/components/PicText2.svelte";
     import Footer from "$lib/components/Footer.svelte";
     import ReviewBloc from "$lib/components/ReviewBloc.svelte";
     import { onMount } from 'svelte';
     import { addOnScreenTrigger } from "$lib/fadein";
+    import StylisedA from "$lib/components/StylisedA.svelte";
+    import { jsScrollControl } from "$lib/scrollControl";
 
     onMount(() => {
         addOnScreenTrigger("[fade-in]");
@@ -30,6 +31,9 @@
                 });
             }
         });
+
+
+        jsScrollControl(".parallax-container");
     });
 </script>
 
@@ -67,6 +71,7 @@
                     Je souhaite désormais accompagner mes futurs clients pour les aider
                     à retrouver un mieux-être au quotidien.
                 </p>
+                <StylisedA href="/about">Lire plus</StylisedA>
             </Title>
         </div>
     </PicText2>
@@ -121,7 +126,7 @@
 
 
     p {
-        font-size: 1.5em;
+        padding-bottom: 1em;
     }
 
 
