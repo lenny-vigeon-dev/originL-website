@@ -9,6 +9,7 @@
     import StylisedA from "$lib/components/StylisedA.svelte";
     import { jsScrollControl } from "$lib/scrollControl";
 
+
     onMount(() => {
         addOnScreenTrigger("[fade-in]");
 
@@ -39,7 +40,7 @@
 
 <div class="parallax-container">
     <div class="parallax-layer" style="--depth: -3;">
-        <img src="bg1.jpg" aria-hidden="true" alt="Page Background">
+        <img src="bg1.png" aria-hidden="true" alt="Page Background">
     </div>
     <div fade-in class="fade-in-title">
         <h1 class="title-name">Laetitia Rizzello</h1>
