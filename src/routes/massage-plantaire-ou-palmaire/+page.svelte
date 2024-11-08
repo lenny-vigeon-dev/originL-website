@@ -8,7 +8,7 @@
 </script>
 
 <BasicContainer>
-    <PracticeTemplate title="Massage plantaire ou palmaire" background="massage_plantaire_ou_palmaire.png">
+    <PracticeTemplate title="Massage plantaire ou palmaire" background="massage_plantaire_ou_palmaire.jpg">
         <TextTile bg_color="var(--color5)">
             Cette prestation a pour vocation d’offrir un véritable
             moment de détente à l’une ou l’autres de ces parties du corps

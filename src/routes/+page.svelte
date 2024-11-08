@@ -8,7 +8,7 @@
     import { addOnScreenTrigger } from "$lib/fadein";
     import StylisedA from "$lib/components/StylisedA.svelte";
     import { jsScrollControl } from "$lib/scrollControl";
-
+    import SmartImg from "$lib/components/SmartImg.svelte";
 
     onMount(() => {
         addOnScreenTrigger("[fade-in]");
@@ -40,7 +40,13 @@
 
 <div class="parallax-container">
     <div class="parallax-layer" style="--depth: -3;">
-        <img src="bg1.png" aria-hidden="true" alt="Page Background">
+        <!-- <img src="bg1.jpg"
+        srcset="bg1_256.jpg w256, bg1_512.jpg w512, bg1_1024.jpg w1024, bg1.jpg w3000"
+        sizes="(max-width: 256px) 256px, (max-width: 512px) 512px, (max-width: 1024px) 1024px, 3000px"
+        aria-hidden="true" alt="Page Background"> -->
+        <SmartImg srcset={["bg1_512.jpg", "bg1.jpg"]}
+        alt="Page Background" aria-hidden="true"
+        style="width: 100%;height: 100vh;object-fit: cover;"/>
     </div>
     <div fade-in class="fade-in-title">
         <h1 class="title-name">Laetitia Rizzello</h1>
@@ -132,7 +138,7 @@
 
 
 
-  .parallax-container img {
+  .bg {
       width: 100%;
       height: 100vh;
       object-fit: cover;
