@@ -7,7 +7,7 @@
 </script>
 
 <BasicContainer>
-    <PracticeTemplate title="Refléxologie auriculaire" background="reflexo_auriculaire.png">
+    <PracticeTemplate title="Refléxologie auriculaire" background="reflexo_auriculaire.jpg">
         <TextTile bg_color="var(--color5)">
             La réflexologie auriculaire consiste en la stimulation de points et
             zones réflexes situés sur l’oreille réalisée à l’aide d’un stylet.

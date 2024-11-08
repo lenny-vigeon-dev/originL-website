@@ -8,7 +8,7 @@
 </script>
 
 <BasicContainer>
-    <PracticeTemplate title="Réflexologie plantaire" background="reflexo_plantaire.png">
+    <PracticeTemplate title="Réflexologie plantaire" background="reflexo_plantaire.jpg">
         <TextTile bg_color="var(--color5)">
             La réflexologie plantaire consiste en la stimulation de
             points et zones réflexes situés sur l’ensemble du pied.
