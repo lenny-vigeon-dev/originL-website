@@ -7,7 +7,7 @@
 </script>
 
 <BasicContainer>
-    <PracticeTemplate title="Réfléxologie faciale" background="reflexo_faciale.png">
+    <PracticeTemplate title="Réfléxologie faciale" background="reflexo_faciale.jpg">
         <TextTile bg_color="var(--color5)">
             La réfléxologie faciale est une méthode développée dans les années 1980
             par le professeur Bui Quoc Chau.

@@ -8,7 +8,7 @@
 </script>
 
 <BasicContainer>
-    <PracticeTemplate title="Réflexologie palmaire" background="reflexo_palmaire.png">
+    <PracticeTemplate title="Réflexologie palmaire" background="reflexo_palmaire.jpg">
         <TextTile bg_color="var(--color5)">
             Comme pour le pied, les différentes parties du corps se
             retrouvent également en correspondance sur l’ensemble de
