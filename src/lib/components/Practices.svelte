@@ -18,11 +18,11 @@
         </Title>
    </div>
    <div class="practice">
-        <PracticeCard title="Réflexologie plantaire" background="reflexo_plantaire.png" url="/reflexologie-plantaire"/>
-        <PracticeCard title="Réflexologie palmaire" background="reflexo_palmaire.png" url="/reflexologie-palmaire"/>
-        <PracticeCard title="Réfléxologie auriculaire" background="reflexo_auriculaire.png" url="/reflexologie-auriculaire"/>
-        <PracticeCard title="Réfléxologie faciale" background="reflexo_faciale.png" url="/reflexologie-faciale"/>
-        <PracticeCard title="Massage plantaire ou palmaire" background="massage_plantaire_ou_palmaire.png" url="/massage-plantaire-ou-palmaire"/>
+        <PracticeCard title="Réflexologie plantaire" background="reflexo_plantaire.jpg" url="/reflexologie-plantaire"/>
+        <PracticeCard title="Réflexologie palmaire" background="reflexo_palmaire.jpg" url="/reflexologie-palmaire"/>
+        <PracticeCard title="Réfléxologie auriculaire" background="reflexo_auriculaire.jpg" url="/reflexologie-auriculaire"/>
+        <PracticeCard title="Réfléxologie faciale" background="reflexo_faciale.jpg" url="/reflexologie-faciale"/>
+        <PracticeCard title="Massage plantaire ou palmaire" background="massage_plantaire_ou_palmaire.jpg" url="/massage-plantaire-ou-palmaire"/>
    </div>
 </section>
 
