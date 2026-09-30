@@ -1,25 +1,11 @@
-<div class="tiles">
-    <slot/>
-</div>
+<script lang="ts">
+  import type { Snippet } from 'svelte';
 
-<style>
-    .tiles {
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-auto-columns: minmax(30em, 80em);
-        /* grid-auto-rows: minmax(30em, 30em); */
-        gap: 1em;
-        grid-template-columns: repeat(auto-fill, minmax(28em, 1fr));
-        margin: 1em 0;
-    }
-    @media (max-width: 800px) {
-        .tiles {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-        }
-    }
-</style>
+  let { children }: { children?: Snippet } = $props();
+</script>
+
+<div
+  class="my-4 flex h-full w-full flex-col gap-4 min-[801px]:grid min-[801px]:grid-cols-[repeat(auto-fill,minmax(28em,1fr))]"
+>
+  {@render children?.()}
+</div>

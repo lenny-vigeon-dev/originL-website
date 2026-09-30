@@ -1,40 +1,30 @@
 <script lang="ts">
-    import "$lib/styles.css";
+  import type { Snippet } from 'svelte';
 
-    export let title: string;
-    export let background_color: string = "transparent";
-    export let position: string = "left";
-    // export let content: string;
+  interface Props {
+    title: string;
+    background_color?: string;
+    position?: 'left' | 'center' | 'right';
+    children?: Snippet;
+  }
 
+  let {
+    title,
+    background_color = 'transparent',
+    position = 'left',
+    children
+  }: Props = $props();
 </script>
 
-<div class="paragraph" style="background-color: {background_color}">
-    <div class="inner" style="align-items: {position};">
-        <h2>{title}</h2>
-        <slot/>
-    </div>
+<div class="w-full" style:background-color={background_color}>
+  <div
+    class="flex flex-col p-4"
+    class:items-center={position === 'center'}
+    class:items-end={position === 'right'}
+  >
+    <h2 class="mb-[0.5em] text-center text-[2em] min-[801px]:text-[3em]">
+      {title}
+    </h2>
+    {@render children?.()}
+  </div>
 </div>
-
-<style>
-    .paragraph {
-        width: 100%;
-    }
-
-    .inner {
-        padding: 1em;
-        display: flex;
-        flex-direction: column;
-    }
-
-    h2 {
-        font-size: 3em;
-        margin-bottom: 0.5em;
-    }
-
-    @media (max-width: 800px) {
-        h2 {
-            font-size: 2em;
-            text-align: center;
-        }
-    }
-</style>

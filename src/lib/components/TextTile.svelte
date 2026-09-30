@@ -1,24 +1,17 @@
 <script lang="ts">
-    import Tile from '$lib/components/Tile.svelte';
+  import type { Snippet } from 'svelte';
+  import Tile from '$lib/components/Tile.svelte';
 
-    export let bg_color = "var(--color5)";
+  interface Props {
+    bg_color?: string;
+    children?: Snippet;
+  }
+
+  let { bg_color = 'var(--color5)', children }: Props = $props();
 </script>
 
-<Tile bg_color={bg_color}>
-    <p><slot/></p>
+<Tile {bg_color}>
+  <p class="mx-4 w-full text-[1em] min-[801px]:mx-[3em] min-[801px]:text-[1.5em]">
+    {@render children?.()}
+  </p>
 </Tile>
-
-<style>
-    p {
-        font-size: 1.5em;
-        width: 100%;
-        margin-inline: 3em;
-    }
-
-    @media (max-width: 800px) {
-        p {
-            font-size: 1em;
-            margin-inline: 1em;
-        }
-    }
-</style>

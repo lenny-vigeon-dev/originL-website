@@ -1,37 +1,19 @@
 <script lang="ts">
-    import "$lib/styles.css";
-    import Title from '$lib/components/Title.svelte';
+  import type { Snippet } from 'svelte';
+  import Title from '$lib/components/Title.svelte';
 
-    export let title: string;
-    // export let content: string;
+  interface Props {
+    title: string;
+    children?: Snippet;
+  }
 
+  let { title, children }: Props = $props();
 </script>
 
 <Title {title}>
-    <div class="content">
-        <p><slot/></p>
-    </div>
+  <div class="flex w-full items-center">
+    <p class="mx-4 w-full text-[1em] min-[801px]:mx-[3em] min-[801px]:text-[1.5em]">
+      {@render children?.()}
+    </p>
+  </div>
 </Title>
-
-<style>
-    .content {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-    }
-
-    p {
-        font-size: 1.5em;
-        width: 100%;
-        margin-inline: 3em;
-    }
-
-    @media (max-width: 800px) {
-
-        p {
-            font-size: 1em;
-            margin-inline: 1em;
-        }
-    }
-</style>

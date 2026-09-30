@@ -1,48 +1,23 @@
 <script lang="ts">
-    export let title: string;
-    export let background: string | null = null;
+  import type { Snippet } from 'svelte';
 
-    let extra_style: string = "";
-    if (background !== null) {
-        extra_style = `background-image: url(${background})`;
-    }
+  interface Props {
+    title: string;
+    background?: string | null;
+    children?: Snippet;
+  }
 
-
+  let { title, background = null, children }: Props = $props();
 </script>
 
-<div class="parent">
-    <div class="title" style={extra_style}>
-        <h1>{title}</h1>
-    </div>
-    <slot/>
+<div class="flex w-full flex-col bg-[var(--color1)]">
+  <div
+    class="flex h-[20vh] w-full items-center justify-center bg-cover bg-center bg-no-repeat text-center"
+    style:background-image={background ? `url("${background}")` : undefined}
+  >
+    <h1 class="text-center text-[clamp(1em,8vw,5em)] text-[var(--color4)]">
+      {title}
+    </h1>
+  </div>
+  {@render children?.()}
 </div>
-
-<style>
-    .parent {
-        width: 100%;
-        background-color: var(--color1);
-        display: flex;
-        flex-direction: column;
-    }
-
-    .title {
-        width: 100%;
-        height: 20vh;
-
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-
-    h1 {
-        text-align: center;
-        color: var(--color4);
-        font-size: clamp(1em, 8vw, 5em);
-    }
-
-</style>

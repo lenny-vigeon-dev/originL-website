@@ -1,155 +1,132 @@
 <script lang="ts">
-    import Practices from "$lib/components/Practices.svelte";
-    import Title from "$lib/components/Title.svelte";
-    import PicText2 from "$lib/components/PicText2.svelte";
-    import Footer from "$lib/components/Footer.svelte";
-    import ReviewBloc from "$lib/components/ReviewBloc.svelte";
-    import { onMount } from 'svelte';
-    import { addOnScreenTrigger } from "$lib/fadein";
-    import StylisedA from "$lib/components/StylisedA.svelte";
-    import { jsScrollControl } from "$lib/scrollControl";
-    import SmartImg from "$lib/components/SmartImg.svelte";
+  import { onMount } from 'svelte';
+  import Practices from '$lib/components/Practices.svelte';
+  import Title from '$lib/components/Title.svelte';
+  import PicText2 from '$lib/components/PicText2.svelte';
+  import Footer from '$lib/components/Footer.svelte';
+  import ReviewBloc from '$lib/components/ReviewBloc.svelte';
+  import StylisedA from '$lib/components/StylisedA.svelte';
+  import SmartImg from '$lib/components/SmartImg.svelte';
+  import { addOnScreenTrigger } from '$lib/fadein';
+  import { jsScrollControl } from '$lib/scrollControl';
 
-    onMount(() => {
-        addOnScreenTrigger("[fade-in]");
+  let scrollableContainer: HTMLDivElement;
 
-        const scrollableContainer: Element | null = document.querySelector('.parallax-container');
+  const reviews = [
+    {
+      content:
+        'Laetitia est une personne extraordinaire et humaine. Les séances se déroulent toujours selon mes besoins. C’est une personne très à l’écoute et ne vous jugera jamais. Elle a pour objectif de vous faire sentir mieux dans votre corps et votre esprit. C’est la meilleure dans le secteur. Je recommande +++',
+      author: 'Léa Bouthors'
+    },
+    {
+      content:
+        "TOP ! je recommande. On m'a conseillé les services de Laëtitia et je ne regrette pas. Très douce, a l'écoute, Laëtitia a su instauré un climat de confiance.",
+      author: 'Sandrine Ferreira'
+    }
+  ];
 
-        if (!scrollableContainer) {
-            console.warn('Scrollable container not found');
-            return;
-        }
-        window.addEventListener("resize", () => {
-            const scrollY: number = scrollableContainer.scrollTop;
-            const maxScrollY: number = scrollableContainer.scrollHeight - scrollableContainer.clientHeight;
-            // console.log('Scroll Y:', scrollY, "/", maxScrollY, scrollableContainer.clientHeight, scrollableContainer.scrollHeight);
-            if (scrollY >= maxScrollY) {
-                scrollableContainer.scrollTo({
-                  top: 0,       // The Y position to scroll to
-                });
-                scrollableContainer.scrollTo({
-                  top: scrollY,       // The Y position to scroll to
-                });
-            }
-        });
+  onMount(() => {
+    addOnScreenTrigger('[data-fade-in]');
 
+    function handleResize(): void {
+      const scrollY = scrollableContainer.scrollTop;
+      const maxScrollY =
+        scrollableContainer.scrollHeight - scrollableContainer.clientHeight;
 
-        jsScrollControl(".parallax-container");
-    });
+      if (scrollY >= maxScrollY) {
+        scrollableContainer.scrollTo({ top: 0 });
+        scrollableContainer.scrollTo({ top: scrollY });
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+    jsScrollControl('.parallax-container');
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
 </script>
 
-<div class="parallax-container">
-    <div class="parallax-layer" style="--depth: -3;">
-        <!-- <img src="bg1.jpg"
-        srcset="bg1_256.jpg w256, bg1_512.jpg w512, bg1_1024.jpg w1024, bg1.jpg w3000"
-        sizes="(max-width: 256px) 256px, (max-width: 512px) 512px, (max-width: 1024px) 1024px, 3000px"
-        aria-hidden="true" alt="Page Background"> -->
-        <SmartImg srcset={["bg1_512.jpg", "bg1.jpg"]}
-        alt="Page Background" aria-hidden="true"
-        style="width: 100%;height: 100vh;object-fit: cover;"/>
+<div
+  bind:this={scrollableContainer}
+  class="parallax-container relative h-screen overflow-y-auto"
+>
+  <div class="parallax-layer relative -z-10">
+    <SmartImg
+      srcset={['bg1_512.jpg', 'bg1.jpg']}
+      alt=""
+      aria-hidden="true"
+      class="h-screen w-full object-cover"
+    />
+  </div>
+
+  <div
+    data-fade-in
+    class="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center text-[2rem] text-white"
+  >
+    <h1 class="text-[3rem] text-[var(--color1)] min-[801px]:text-[5rem]">
+      Laetitia Rizzello
+    </h1>
+
+    <h2 class="text-[2rem] text-[var(--color1)] min-[801px]:text-[4rem]">
+      Réflexologue
+    </h2>
+  </div>
+
+  <Practices />
+
+  <PicText2
+    left={true}
+    img_path="laetitia.jpg"
+    img_alt="Laetitia Rizzello"
+    background_color_img="var(--color5)"
+  >
+    <div data-fade-in>
+      <Title title="Qui suis-je ?" position="center">
+        <p class="pb-[1em]">
+          Depuis aussi loin que je me souvienne,
+          j’ai toujours ressenti beaucoup d’empathie envers les personnes
+          et les êtres vivants en général.
+          <br /><br />
+          Plus je me suis intéressée à la psychologie puis aux méthodes naturelles
+          car j’ai toujours eu plaisir à prendre soin de mon entourage.
+          J’accorde beaucoup d’importance à l’équilibre en général;
+          aussi bien sur le plan physique,
+          physiologique que psychologique : manger équilibré,
+          pratiquer une activité physique régulière ou encore prendre un temps pour soi.
+          <br /><br />
+          L’importance que j’attache au bienêtre en général,
+          mêlé à mon expérience personnelle, m’ont amené à m’intéresser
+          à différentes techniques naturelles dont la réflexologie fait partie.
+          <br /><br />
+          A l’aube de mes 50 ans, après plus de 30 ans en tant que salariée,
+          j'ai donc décidé de concrétiser ma passion pour le bien-être.
+          <br /><br />
+          Je souhaite désormais accompagner mes futurs clients pour les aider
+          à retrouver un mieux-être au quotidien.
+        </p>
+
+        <StylisedA href="/about">Lire plus</StylisedA>
+      </Title>
     </div>
-    <div fade-in class="fade-in-title">
-        <h1 class="title-name">Laetitia Rizzello</h1>
-        <h2 class="title-profession">Réflexologue</h2>
-    </div>
-    <Practices />
-    <PicText2 left={true} img_path="laetitia.jpg" img_alt="Laetitia Rizzello" background_color_img="var(--color5)">
-        <div fade-in>
-            <Title title="Qui suis-je ?" position="center">
-                <p>
-                    Depuis aussi loin que je me souvienne,
-                    j’ai toujours ressenti beaucoup d’empathie envers les personnes
-                    et les êtres vivants en général.
-                    <br><br>
-                    Plus je me suis intéressée à la psychologie puis aux méthodes naturelles
-                    car j’ai toujours eu plaisir à prendre soin de mon entourage.
-                    J’accorde beaucoup d’importance à l’équilibre en général;
-                    aussi bien sur le plan physique,
-                    physiologique que psychologique : manger équilibré,
-                    pratiquer une activité physique régulière ou encore prendre un temps pour soi.
-                    <br><br>
-                    L’importance que j’attache au bienêtre en général,
-                    mêlé à mon expérience personnelle, m’ont amené à m’intéresser
-                    à différentes techniques naturelles dont la réflexologie fait partie.
-                    <br><br>
-                    A l’aube de mes 50 ans, après plus de 30 ans en tant que salariée,
-                    j'ai donc décidé de concrétiser ma passion pour le bien-être.
-                    <br><br>
-                    Je souhaite désormais accompagner mes futurs clients pour les aider
-                    à retrouver un mieux-être au quotidien.
-                </p>
-                <StylisedA href="/about">Lire plus</StylisedA>
-            </Title>
-        </div>
-    </PicText2>
-    <ReviewBloc reviews={[
-        {"content": "Laetitia est une personne extraordinaire et humaine. Les séances se déroulent toujours selon mes besoins. C’est une personne très à l’écoute et ne vous jugera jamais. Elle a pour objectif de vous faire sentir mieux dans votre corps et votre esprit. C’est la meilleure dans le secteur. Je recommande +++", "author": "Léa Bouthors"},
-        {"content": "TOP ! je recommande. On m'a conseillé les services de Laëtitia et je ne regrette pas. Très douce, a l'écoute, Laëtitia a su instauré un climat de confiance.", "author": "Sandrine Ferreira"},
-    ]} />
-   <Footer/>
+  </PicText2>
+
+  <ReviewBloc {reviews} />
+  <Footer />
 </div>
 
 <style>
-    [fade-in] {
-        opacity: 0;
-        transition: 1s;
-    }
-
-    .parallax-container {
-        perspective: 1px;
-        overflow-y: auto; /* Contains the parallax layers fully */
-        position: relative;
-        height: 100vh;
-    }
-
-    .parallax-layer {
-        /* Full width and height for the parallax layer */
-        position: relative;
-        /* height: 100vh;
-        width: 100%; */
-        z-index: -1;
-
-        transform: translateZ(calc(var(--depth) * 1px)) scale(calc(1 + abs(var(--depth)))); /* Creates the depth illusion */
-    }
-
-    .fade-in-title {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: white;
-        font-size: 2rem;
-        z-index: 10;
-    }
-    .fade-in-title h1 {
-        font-size: 5rem;
-        color: var(--color1);
-    }
-    .fade-in-title h2 {
-        font-size: 4rem;
-        color: var(--color1);
-    }
-
-
-    p {
-        padding-bottom: 1em;
-    }
-
-
-
-  .bg {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
+  .parallax-container {
+    perspective: 1px;
   }
 
-  @media (max-width: 800px) {
-      .fade-in-title h1 {
-          font-size: 3rem;
-      }
-      .fade-in-title h2 {
-          font-size: 2rem;
-      }
+  .parallax-layer {
+    transform: translateZ(-3px) scale(4);
+  }
+
+  [data-fade-in] {
+    opacity: 0;
+    transition: 1s;
   }
 </style>

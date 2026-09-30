@@ -1,22 +1,17 @@
 <script lang="ts">
-    export let href: string;
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    href: string;
+    children?: Snippet;
+  }
+
+  let { href, children }: Props = $props();
 </script>
 
-<a href={href}><slot/></a>
-
-<style>
-    a {
-        background-color: var(--color3);
-        color: white;
-        border: none;
-        padding: 0.7em 1.5em;
-        border-radius: 0.3em;
-        cursor: pointer;
-        transition: background-color 0.2s;
-        font-size: 1em;
-    }
-
-    a:hover {
-        background-color: var(--color4);
-    }
-</style>
+<a
+  {href}
+  class="inline-block cursor-pointer rounded-[0.3em] bg-[var(--color3)] px-[1.5em] py-[0.7em] text-white transition-colors hover:bg-[var(--color4)]"
+>
+  {@render children?.()}
+</a>

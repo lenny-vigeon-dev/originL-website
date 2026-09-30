@@ -1,91 +1,52 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-    import Title from "./Title.svelte";
+  import { onMount } from 'svelte';
+  import Title from './Title.svelte';
 
-    type ReviewInfo = {
-        content: string;
-        author: string;
-    };
+  interface ReviewInfo {
+    content: string;
+    author: string;
+  }
 
-    export let reviews: Array<ReviewInfo>;
-    export let review_delay_ms: number = 3000;
+  interface Props {
+    reviews: ReviewInfo[];
+    review_delay_ms?: number;
+  }
 
-    onMount(() => {
-        const reviewsContainer = document.querySelector('.reviews');
-        const reviews = document.querySelectorAll('.review');
-        let currentIndex = 0;
+  let { reviews, review_delay_ms = 3000 }: Props = $props();
+  let currentIndex = $state(0);
 
-        // Function to update the carousel's position
-        function showNextReview() {
-          // Calculate the new transform value
-          currentIndex = (currentIndex + 1) % reviews.length;
-          const offset = -currentIndex * 100; // Slide by 100% of the container width
-          reviewsContainer.style.transform = `translateX(${offset}%)`;
-        }
+  onMount(() => {
+    if (reviews.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
 
-        // Set interval to switch reviews every 3 seconds
-        setInterval(showNextReview, review_delay_ms); // Adjust the time (3000ms = 3 seconds) as desired
-    })
+    const timer = window.setInterval(() => {
+      currentIndex = (currentIndex + 1) % reviews.length;
+    }, Math.max(1000, review_delay_ms));
 
-
+    return () => window.clearInterval(timer);
+  });
 </script>
 
-<section class="review-carousel">
-    <div class="top-line"></div>
-    <Title title="Avis" position="center" />
-    <div class="reviews">
-        {#each reviews as review}
-            <div class="review">
-                <p>{review.content}</p>
-                <div class="seperation"></div>
-                <p>{review.author}</p>
-            </div>
-        {/each}
+<section class="relative w-full overflow-hidden bg-[var(--color1)]" aria-label="Avis">
+  <div class="h-[10px] w-full bg-[var(--color5)]"></div>
+  <Title title="Avis" position="center" />
+
+  {#if reviews.length > 0}
+    <div
+      class="flex w-full pb-8 transition-transform duration-500 motion-reduce:transition-none"
+      style:transform={`translateX(-${currentIndex * 100}%)`}
+    >
+      {#each reviews as review, index}
+        <div
+          class="box-border flex min-w-full flex-col items-center justify-center p-5 text-center"
+          aria-hidden={reviews.length > 1 && currentIndex !== index}
+        >
+          <p class="text-2xl">{review.content}</p>
+          <div class="my-4 h-[2px] w-[5%] bg-[var(--color4)]"></div>
+          <p class="text-2xl">{review.author}</p>
+        </div>
+      {/each}
     </div>
+  {/if}
 </section>
-
-<style>
-    .review-carousel {
-      width: 100%; /* Adjust width to fit your design */
-      /* height: 20em; */
-      overflow: hidden; /* Hide overflow to create sliding effect */
-      position: relative;
-      background-color: var(--color1);
-    }
-
-    .top-line {
-        background-color: var(--color5);
-        height: 10px;
-        width: 100%;
-    }
-
-    .reviews {
-      display: flex;
-      width: 100%;
-      padding-bottom: 2em;
-      transition: transform 0.5s ease; /* Smooth transition for sliding */
-    }
-
-    .review {
-        min-width: 100%; /* Each review takes full width of the container */
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-sizing: border-box;
-        text-align: center;
-        justify-content: center;
-    }
-
-    .seperation {
-        background-color: var(--color4);
-        height: 2px;
-        width: 5%;
-        margin: 1em 0;
-
-    }
-
-    p {
-        font-size: 1.5rem;
-    }
-</style>
