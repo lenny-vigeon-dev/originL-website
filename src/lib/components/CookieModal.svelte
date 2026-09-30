@@ -1,69 +1,31 @@
 <script lang="ts">
-    import Cookies from 'js-cookie';
-    import { onMount } from 'svelte';
+  import Cookies from 'js-cookie';
+  import { onMount } from 'svelte';
 
-    let cookieName: string = 'cookieInfo';
-    let cookieAccepted: boolean | null = null;
+  const cookieName = 'cookieInfo';
+  let visible = $state(false);
 
-    function isCookieAccepted(): boolean
-    {
-        let state: boolean | string = Cookies.get(cookieName);
-        if (state === true || state == "true") {
-            state = true;
-        } else {
-            state = false;
-            setCookieStatus(false)
-        }
-        return state
-    }
+  onMount(() => {
+    visible = Cookies.get(cookieName) !== 'true';
+  });
 
-    function setCookieStatus(state: boolean = false) {
-        Cookies.set(cookieName, state, { expires: 10000 });
-        return state;
-    }
-
-    onMount(() => {
-        cookieAccepted = isCookieAccepted();
-    });
+  function accept(): void {
+    Cookies.set(cookieName, 'true', { expires: 365 });
+    visible = false;
+  }
 </script>
 
-{#if cookieAccepted === false}
-    <div class="content">
-        <div class="cookie-modal">
-            <p>Ce site ne récupère pas d'informations personnelles sur ses utilisateurs.</p>
-            <button on:click={() => {cookieAccepted = setCookieStatus(true)}}>OK</button>
-        </div>
+{#if visible}
+  <div class="w-full bg-[var(--color4)]">
+    <div class="m-4 flex items-center justify-between gap-4 text-[var(--color1)]">
+      <p>Ce site ne récupère pas d'informations personnelles sur ses utilisateurs.</p>
+      <button
+        type="button"
+        class="cursor-pointer rounded-[5px] bg-[var(--color1)] px-4 py-2 text-[var(--color4)]"
+        onclick={accept}
+      >
+        OK
+      </button>
     </div>
+  </div>
 {/if}
-
-
-<style>
-    .content {
-        /* position: fixed; */
-        background-color: var(--color4);
-        width: 100%;
-        /* bottom: 0;
-        left: 0; */
-    }
-
-    .cookie-modal {
-        color: var(--color1);
-        margin: 1em;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .cookie-modal button {
-        background-color: var(--color1);
-        color: var(--color4);
-        padding: 0.5em 1em;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    p {
-        color: var(--color1)
-    }
-</style>

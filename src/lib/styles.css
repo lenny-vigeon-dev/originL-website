@@ -1,3 +1,8 @@
+@layer theme, base, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
 @font-face {
 	font-family: 'Playfair Display';
 	src: url('/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
@@ -12,163 +17,127 @@
 	font-style: normal;
 }
 
+@layer base {
+	:root {
+		--font-title: 'Playfair Display';
+		--font-body: 'Avenir Light';
 
-:root {
-	--font-title: 'Playfair Display';
-	--font-body: 'Avenir Light';
-	--color1: #f6efdc;
-	--color5: #f0e4c6;
-	--color2: #c7ba9a;
-	--color3: #a6935f;
-	--color4: #756436;
-	font-family: var(--font-body);
-}
+		--color1: #f6efdc;
+		--color2: #c7ba9a;
+		--color3: #a6935f;
+		--color4: #756436;
+		--color5: #f0e4c6;
 
-body {
-	min-height: 100vh;
-	margin: 0;
-	background-attachment: fixed;
-	background-color: var(--color1);
-	background-size: 100vw 100vh;
-	overflow: hidden;
-}
-
-a,
-h1,
-h2,
-h3,
-h4,
-p,
-pre {
-	/* font-weight: bold; */
-	color: var(--color4);
-	margin: 0px;
-	padding: 0px;
-	/* font-family: var(--font-body); */
-}
-
-h1,
-h2 {
-	font-family: var(--font-title);
-}
-
-h3,
-h4,
-p,
-a {
-	font-family: var(--font-body);
-}
-
-/* h1 {
-	font-size: 4rem;
-}
-h2 {
-	font-size: 3rem;
-}
-h3 {
-	font-size: 2.5rem;
-}
-h4 {
-	font-size: 2rem;
-} */
-a,
-p {
-	font-size: 1.5em;
-}
-
-@media (max-width: 800px) {
-	p {
-		font-size: 1em;
+		font-family: var(--font-body);
 	}
-}
 
-a {
-	text-decoration: none;
-	color: var(--color4);
-	/* margin-inline: 1rem; */
-	transition: color 0.2s ease; /* Add a smooth color transition on hover */
-	align-items: center;
-	justify-content: center;
-	/* font-weight: bold; */
-}
-
-a:hover {
-	color: var(--color2);
-}
-
-/* @media (max-width: 720px) {
-	h1 {
-		font-size: 1em;
+	body {
+		min-height: 100vh;
+		margin: 0;
+		background-attachment: fixed;
+		background-color: var(--color1);
+		background-size: 100vw 100vh;
+		overflow: hidden;
 	}
+
+	a,
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	pre {
+		color: var(--color4);
+		margin: 0;
+		padding: 0;
+	}
+
+	h1,
 	h2 {
-		font-size: 0.1em;
+		font-family: var(--font-title);
 	}
-	h3 {
-		font-size: 1em;
+
+	h3,
+	h4,
+	p,
+	a {
+		font-family: var(--font-body);
 	}
-	h4 {
-		font-size: 1em;
-	}
+
+	a,
 	p {
-		font-size: 1em;
+		font-size: 1.5em;
 	}
 
-} */
-
-
-
-input,
-button {
-	font-size: inherit;
-	font-family: inherit;
-}
-
-button {
-	border: none;
-	border-radius: 5px;
-	background-color: white;
-	color: black;
-	font-size: 25px;
-	font-weight: bold;
-	padding: 10px 20px;
-	transition: background-color 0.2s ease; /* Add a smooth color transition on hover */
-	cursor: pointer;
-}
-
-button:hover {
-	background-color: rgb(200, 200, 200);
-}
-
-
-input {
-	border: none;
-	border-bottom: white solid 3px;
-
-	margin: 50px 0px;
-	background-color: transparent;
-	color: white;
-	font-size: 25px;
-	font-weight: bold;
-}
-
-button:focus:not(:focus-visible) {
-	outline: none;
-}
-
-@media (min-width: 720px) {
-	h1 {
-		font-size: 2.4rem;
+	@media (max-width: 800px) {
+		p {
+			font-size: 1em;
+		}
 	}
-}
 
-.visually-hidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: auto;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;
+	a {
+		text-decoration: none;
+		color: var(--color4);
+		transition: color 0.2s ease;
+		align-items: center;
+		justify-content: center;
+	}
+
+	a:hover {
+		color: var(--color2);
+	}
+
+	input,
+	button {
+		font-size: inherit;
+		font-family: inherit;
+	}
+
+	button {
+		border: none;
+		border-radius: 5px;
+		background-color: white;
+		color: black;
+		font-size: 25px;
+		font-weight: bold;
+		padding: 10px 20px;
+		transition: background-color 0.2s ease;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: rgb(200, 200, 200);
+	}
+
+	input {
+		border: none;
+		border-bottom: white solid 3px;
+		margin: 50px 0;
+		background-color: transparent;
+		color: white;
+		font-size: 25px;
+		font-weight: bold;
+	}
+
+	button:focus:not(:focus-visible) {
+		outline: none;
+	}
+
+	@media (min-width: 720px) {
+		h1 {
+			font-size: 2.4rem;
+		}
+	}
+
+	.visually-hidden {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: auto;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+		white-space: nowrap;
+	}
 }

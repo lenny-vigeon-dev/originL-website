@@ -1,28 +1,12 @@
-<button class="styled-button" aria-label="Do something">
-    <slot/>
+<script lang="ts">
+  import type { Snippet } from 'svelte';
+
+  let { children }: { children?: Snippet } = $props();
+</script>
+
+<button
+  type="button"
+  class="inline-flex items-center justify-center border-0 bg-transparent p-0 text-[1em] font-thin text-[var(--color4)] transition-colors hover:text-[var(--color2)] focus-visible:text-[var(--color2)]"
+>
+  {@render children?.()}
 </button>
-
-<style>
-    .styled-button {
-      text-decoration: none;
-	    color: var(--color4);
-	    /* margin-inline: 1rem; */
-	    transition: color 0.2s ease; /* Add a smooth color transition on hover */
-	    align-items: center;
-	    justify-content: center;
-	    /* font-weight: bold; */
-      background-color: transparent;
-      padding: 0px;
-      border: none;
-      margin: 0px;
-      font-size: 1em;
-      font-weight: 100;
-    }
-
-    /* Mimic the <a> element's hover effect */
-    .styled-button:hover,
-    .styled-button:focus {  
-      color: var(--color2);
-    }
-
-  </style>

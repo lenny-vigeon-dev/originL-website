@@ -1,79 +1,43 @@
 <script lang="ts">
-    import Tile from '$lib/components/Tile.svelte';
+  import type { Snippet } from 'svelte';
 
-    export let left: boolean = true;
-    export let img_path: string;
-    export let img_alt: string;
-    export let img_width: string = "50%";
-    export let img_max_width: string = "100%";
-    export let background_color: string = "transparent";
+  interface Props {
+    left?: boolean;
+    img_path: string;
+    img_alt: string;
+    img_width?: string;
+    img_max_width?: string;
+    background_color?: string;
+    children?: Snippet;
+  }
 
+  let {
+    left = true,
+    img_path,
+    img_alt,
+    img_width = '50%',
+    img_max_width = '100%',
+    background_color = 'transparent',
+    children
+  }: Props = $props();
 </script>
 
-
-<div class="img-content" style="--pic-text-img-width: {img_width}; --pic-text-img-max-width: {img_max_width}; background-color: {background_color}">
-    <img src={img_path} alt={img_alt} class={left ? "float-left" : "float-right"} />
-    <p><slot/></p>
+<div
+  class="w-full"
+  style:background-color={background_color}
+  style:--pic-text-img-width={img_width}
+  style:--pic-text-img-max-width={img_max_width}
+>
+  <img
+    src={img_path}
+    alt={img_alt}
+    class="mb-4 w-[var(--pic-text-img-width)] max-w-[var(--pic-text-img-max-width)]"
+    class:float-left={left}
+    class:float-right={!left}
+    class:mr-8={left}
+    class:ml-8={!left}
+  />
+  <p class="mx-4 text-justify text-[1em] min-[801px]:mr-[2em] min-[801px]:ml-0 min-[801px]:text-[1.5em]">
+    {@render children?.()}
+  </p>
 </div>
-
-<style>
-    img {
-        width: var(--pic-text-img-width);
-        max-width: var(--pic-text-img-max-width);
-    }
-
-    .img-content {
-        width: 100%;
-    }
-
-    .float-left {
-        float: left;
-        margin: 0 2em 1em 0;
-    }
-
-    .float-right {
-        float: right;
-        margin: 0 0 1em 2em;
-    }
-
-    p {
-        text-align: justify;
-        font-size: 1.5em;
-        margin-right: 2em;
-    }
-
-
-    @media (max-width: 800px) {
-        p {
-            font-size: 1em;
-            margin-inline: 1em;
-        }
-        /* img {
-            width: 80%;
-        } */
-    }
-
-</style>
-
-
-<!-- <div class="container">
-    <img src={img_path} alt={img_alt} class="float-left">
-    <p><slot/></p>
-  </div>
-
-  <style>
-    .container {
-  width: 100%;
-}
-
-.float-left {
-  float: left;
-  margin: 0 15px 15px 0; /* Adds some space around the image */
-  width: 200px; /* Adjust the width of the image */
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.5;
-}
-  </style> -->

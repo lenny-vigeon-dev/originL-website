@@ -1,39 +1,40 @@
 <script lang="ts">
-    import {onMount} from 'svelte';
+  import { onMount } from 'svelte';
+  import type { HTMLImgAttributes } from 'svelte/elements';
 
-    export let srcset: Array<string> | string;
-    // export let $$restProps = {}; // Collects all extra props, like `class`
+  interface Props extends Omit<HTMLImgAttributes, 'src' | 'srcset'> {
+    srcset: string[] | string;
+    alt: string;
+  }
 
-    if (typeof srcset === "string") {
-        srcset = [srcset];
+  let { srcset, alt, ...rest }: Props = $props();
+  let currentSrc = $state('');
+
+  let sources = $derived(typeof srcset === 'string' ? [srcset] : srcset);
+
+  onMount(() => {
+    let cancelled = false;
+
+    async function load(): Promise<void> {
+      for (const source of sources.slice(1)) {
+        const preload = new Image();
+        preload.src = source;
+
+        try {
+          await preload.decode();
+          if (cancelled) return;
+          currentSrc = source;
+        } catch {
+          // Keep the last successfully loaded source.
+        }
+      }
     }
 
-    let inital_src: string = srcset[0];  // Initial src
-
-    onMount(() => {
-        const image: Element | null = document.querySelector(".smart-img");
-
-        if (image) {
-            async function increase_resolution(img: Element, srcset: Array<string>) {
-                srcset.shift();
-                if (srcset.length === 0) {
-                    return;
-                }
-                const highResImage = new Image();
-                highResImage.src = srcset[0];
-
-                await new Promise((resolve) => {
-                    highResImage.onload = () => {
-                        img.setAttribute("src", highResImage.src);  // Swap to high-res version
-                        resolve();
-                    };
-                });
-                increase_resolution(img, srcset);
-            }
-            increase_resolution(image, srcset);
-        }
-    });
-
+    void load();
+    return () => {
+      cancelled = true;
+    };
+  });
 </script>
 
-<img class="smart-img" src="{inital_src}" {...$$restProps}/>
+<img class="smart-img" src={currentSrc || sources[0] || ''} {alt} {...rest} />

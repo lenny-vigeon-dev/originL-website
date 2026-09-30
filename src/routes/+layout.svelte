@@ -1,40 +1,30 @@
 <script lang="ts">
-    import Header from '$lib/components/Header.svelte';
-    import Footer from '../lib/components/Footer.svelte';
-    import CookieModal from '$lib/components/CookieModal.svelte';
-    import "$lib/styles.css";
-    import { onMount } from 'svelte';
+  import type { Snippet } from 'svelte';
+  import Header from '$lib/components/Header.svelte';
+  import CookieModal from '$lib/components/CookieModal.svelte';
+  import '$lib/styles.css';
 
-    onMount(() => {
-        window.addEventListener('resize', () => {
-          // Scroll to bottom if already at the bottom
-          if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            window.scrollTo(0, document.body.scrollHeight);
-          }
-        });
-    });
+  interface Props {
+    children: Snippet;
+  }
+
+  let { children }: Props = $props();
 </script>
 
 <svelte:head>
   <title>LR - OriginL</title>
 </svelte:head>
 
-<main>
+<div class="flex h-screen w-full flex-col overflow-hidden bg-[var(--color1)]">
+  <div class="shrink-0">
     <Header />
-    <slot />
-    <CookieModal />
-</main>
+  </div>
 
-<style>
-    main {
-        display: flex;
-        flex-direction: column;
-        /* align-items: center; */
-        justify-content: space-between;
-        width: 100vw;
-        height: 100vh;
-        /* text-align: center; */
-        /* align-items: center; */
-        background-color: var(--color1);
-    }
-</style>
+  <main class="min-h-0 flex-1 overflow-hidden">
+    {@render children()}
+  </main>
+
+  <div class="shrink-0">
+    <CookieModal />
+  </div>
+</div>
