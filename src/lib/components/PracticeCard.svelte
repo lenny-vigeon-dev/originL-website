@@ -12,7 +12,7 @@
 
 <div
   class="flex h-[50vw] w-full flex-col items-center bg-cover bg-center bg-no-repeat text-center min-[1001px]:h-full"
-  style:background-image={`url("${background}")`}
+  style:background-image={`linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url("${background}")`}
 >
   <div class="flex h-full w-full flex-col items-center justify-around text-center">
     <h2
