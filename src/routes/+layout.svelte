@@ -15,12 +15,12 @@
   <title>LR - OriginL</title>
 </svelte:head>
 
-<div class="flex h-screen w-full flex-col overflow-x-hidden bg-[var(--color1)]">
+<div class="flex h-screen w-full flex-col bg-[var(--color1)]">
   <div class="shrink-0">
     <Header />
   </div>
 
-  <main class="min-h-0 flex-1 overflow-x-hidden">
+  <main class="min-h-0 flex-1 overflow-hidden">
     {@render children()}
   </main>
 
