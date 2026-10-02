@@ -35,7 +35,7 @@
         {:else}
           <button
             type="button"
-            class="cursor-pointer bg-transparent text-[var(--color4)] hover:text-[var(--color2)] focus-visible:text-[var(--color2)]"
+            class="m-0 cursor-pointer rounded-none bg-transparent p-0 text-[1.5em] font-normal text-[var(--color4)] hover:bg-transparent hover:text-[var(--color2)] focus-visible:text-[var(--color2)]"
             aria-haspopup="true"
           >
             {label} <span aria-hidden="true">▾</span>
