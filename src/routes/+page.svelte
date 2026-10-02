@@ -2,6 +2,8 @@
   import { onMount } from 'svelte';
   import Practices from '$lib/components/Practices.svelte';
   import Title from '$lib/components/Title.svelte';
+  import Tile from '$lib/components/Tile.svelte';
+  import ContactInfo from '$lib/components/ContactInfo.svelte';
   import PicText2 from '$lib/components/PicText2.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import ReviewBloc from '$lib/components/ReviewBloc.svelte';
@@ -11,6 +13,18 @@
   import { jsScrollControl } from '$lib/scrollControl';
 
   let scrollableContainer: HTMLDivElement;
+
+  const address =
+    '44 Bis Avenue du Clos saint Georges, Bussy-Saint-Georges 77600';
+  const phoneNumber = '+33 6 11 26 62 58';
+  const email = 'reflexo.lr@gmail.com';
+
+  const phoneHref = `tel:${phoneNumber.replace(/\s/g, '')}`;
+  const mapsHref =
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
+  const mapsEmbedSrc =
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42027.80112133329!2d2.6676070417730133!3d48.82506841788993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x800f49a2c705615d%3A0x83891d781e24f1da!2sLaetitia%20RIZZELLO!5e0!3m2!1sfr!2sfr!4v1723067000812!5m2!1sfr!2sfr';
 
   const reviews = [
     {
@@ -113,6 +127,38 @@
   </PicText2>
 
   <ReviewBloc {reviews} />
+
+  <Tile bg_color="transparent">
+    <div
+      class="flex h-[40em] w-full flex-col justify-between min-[801px]:h-auto min-[801px]:flex-row"
+    >
+      <div class="flex-1">
+        <Title title="Où me trouver ?" position="center">
+          <div class="flex flex-col items-center gap-[1em]">
+            <ContactInfo
+              title="Adresse :"
+              content={address}
+              href={mapsHref}
+            />
+          </div>
+        </Title>
+      </div>
+
+      <div class="flex-[2] min-[801px]:flex-1">
+        <iframe
+          title="Emplacement du cabinet"
+          width="100%"
+          height="100%"
+          class="border-0"
+          src={mapsEmbedSrc}
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </Tile>
+  <Footer />
   <Footer />
 </div>
 
