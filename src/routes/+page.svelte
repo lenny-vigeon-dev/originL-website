@@ -128,37 +128,38 @@
 
   <ReviewBloc {reviews} />
 
-  <Tile bg_color="transparent">
-    <div
-      class="flex h-[40em] w-full flex-col justify-between min-[801px]:h-auto min-[801px]:flex-row"
-    >
-      <div class="flex-1">
-        <Title title="Où me trouver ?" position="center">
-          <div class="flex flex-col items-center gap-[1em]">
-            <ContactInfo
-              title="Adresse :"
-              content={address}
-              href={mapsHref}
-            />
-          </div>
-        </Title>
-      </div>
+  <section class="border-y-[10px] border-[var(--color5)] bg-[var(--color1)]">
+    <Tile bg_color="transparent">
+      <div
+        class="flex h-[40em] w-full flex-col justify-between min-[801px]:h-auto min-[801px]:flex-row"
+      >
+        <div class="flex-1">
+          <Title title="Où me trouver ?" position="center">
+            <div class="flex flex-col items-center gap-[1em]">
+              <ContactInfo
+                title="Adresse :"
+                content={address}
+                href={mapsHref}
+              />
+            </div>
+          </Title>
+        </div>
 
-      <div class="flex-[2] min-[801px]:flex-1">
-        <iframe
-          title="Emplacement du cabinet"
-          width="100%"
-          height="100%"
-          class="border-0"
-          src={mapsEmbedSrc}
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <div class="flex-[2] min-[801px]:flex-1">
+          <iframe
+            title="Emplacement du cabinet"
+            width="100%"
+            height="100%"
+            class="border-0"
+            src={mapsEmbedSrc}
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
-    </div>
-  </Tile>
-  <Footer />
+    </Tile>
+  </section>
   <Footer />
 </div>
 
