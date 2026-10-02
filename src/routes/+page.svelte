@@ -64,7 +64,7 @@
 
 <div
   bind:this={scrollableContainer}
-  class="parallax-container relative h-screen overflow-y-auto"
+  class="parallax-container relative h-full overflow-y-auto"
 >
   <div class="parallax-layer relative -z-10">
     <SmartImg

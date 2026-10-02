@@ -10,7 +10,7 @@
   />
 </svelte:head>
 
-<main class="min-h-screen bg-[var(--color1)] px-6 py-16">
+<main class="h-full overflow-y-auto bg-[var(--color1)] px-6 py-16">
   <section class="mx-auto max-w-4xl">
     <header class="mb-12 text-center">
       <h1
