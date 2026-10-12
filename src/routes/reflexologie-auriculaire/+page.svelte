@@ -2,6 +2,7 @@
   import PracticeTemplate from '$lib/components/PracticeTemplate.svelte';
   import TextTile from '$lib/components/TextTile.svelte';
   import BasicContainer from '$lib/components/BasicContainer.svelte';
+  import FAQQuestion from '$lib/components/QAQuestion.svelte';
 </script>
 
 <BasicContainer>
@@ -24,4 +25,8 @@
       avec simplicité et discrétion.
     </TextTile>
   </PracticeTemplate>
+  <FAQQuestion
+    question="Comment se déroule une séance de réflexologie auriculaire ?">
+    test hihihi
+  </FAQQuestion>
 </BasicContainer>

@@ -1,3 +1,4 @@
+
 export function addOnScreenTrigger(cssProperty: string)
 {
     const inViewport = (entries: Array<any>, observer: IntersectionObserver) => {
