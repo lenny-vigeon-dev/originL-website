@@ -1,22 +1,24 @@
 <script lang="ts">
-  import PracticeTemplate from '$lib/components/PracticeTemplate.svelte';
-  import TextTile from '$lib/components/TextTile.svelte';
   import BasicContainer from '$lib/components/BasicContainer.svelte';
+  import InfoPageSection from '$lib/components/InfoPageSection.svelte';
 </script>
 
 <BasicContainer>
-  <PracticeTemplate
+  <InfoPageSection
     title="Réflexologie palmaire"
-    background="reflexo_palmaire.jpg"
+    imageSrc="/reflexo_palmaire.jpg"
+    imageAlt="Séance de réflexologie palmaire avec massage de la main"
   >
-    <TextTile bg_color="var(--color5)">
+    <p>
       Comme pour le pied, les différentes parties du corps se
       retrouvent également en correspondance sur l’ensemble de
       la main. La réflexologie palmaire consiste en la stimulation
       de points et zones réflexes situés sur la main.
-      <br /><br />
+    </p>
+
+    <p>
       La réflexologie palmaire s’intègre parfaitement dans
       l’accompagnement de personnes âgées ou d’enfants.
-    </TextTile>
-  </PracticeTemplate>
+    </p>
+  </InfoPageSection>
 </BasicContainer>

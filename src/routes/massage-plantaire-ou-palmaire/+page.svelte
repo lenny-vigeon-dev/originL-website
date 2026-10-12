@@ -1,27 +1,33 @@
 <script lang="ts">
-  import PracticeTemplate from '$lib/components/PracticeTemplate.svelte';
-  import TextTile from '$lib/components/TextTile.svelte';
   import BasicContainer from '$lib/components/BasicContainer.svelte';
+  import InfoPageSection from '$lib/components/InfoPageSection.svelte';
 </script>
 
 <BasicContainer>
-  <PracticeTemplate
+  <InfoPageSection
     title="Massage plantaire ou palmaire"
-    background="massage_plantaire_ou_palmaire.jpg"
+    imageSrc="/massage_plantaire_ou_palmaire.jpg"
+    imageAlt="Massage des pieds ou des mains"
   >
-    <TextTile bg_color="var(--color5)">
+    <p>
       Cette prestation a pour vocation d’offrir un véritable
-      moment de détente à l’une ou l’autres de ces parties du corps
+      moment de détente à l’une ou l’autre de ces parties du corps
       que sont les pieds ou les mains, sollicitées tout au long de la journée.
-      <br />
+    </p>
+
+    <p>
       Ces massages présentent également un intérêt pour les personnes alitées
       ou qui ne souhaitent pas recevoir un massage corporel.
-      <br /><br />
+    </p>
+
+    <p>
       Ce type de massage a pour effet d’induire une profonde relaxation
       et un net assouplissement des zones massées.
-      <br /><br />
+    </p>
+
+    <p>
       Les massages plantaires et/ou palmaires peuvent
       également aider à améliorer la qualité du sommeil.
-    </TextTile>
-  </PracticeTemplate>
+    </p>
+  </InfoPageSection>
 </BasicContainer>

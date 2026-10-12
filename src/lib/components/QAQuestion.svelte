@@ -1,7 +1,9 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
+
   interface Props {
     question: string;
-    children: import('svelte').Snippet;
+    children: Snippet;
   }
 
   let { question, children }: Props = $props();
@@ -30,7 +32,9 @@
   </button>
 
   {#if isOpen}
-    <div class="pb-6 leading-relaxed text-[var(--color4)]">
+    <div
+      class="pb-6 text-[1.75rem] leading-relaxed text-[var(--color4)] [&_p]:text-[1.25rem] [&_p]:leading-relaxed"
+    >
       {@render children()}
     </div>
   {/if}
