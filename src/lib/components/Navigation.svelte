@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import StylisedA from './StylisedA.svelte';
 
   interface Props {
     nav_elements: Record<string, string | Record<string, string>>;
@@ -17,12 +16,15 @@
     };
 
     media.addEventListener('change', closeOnDesktop);
-    return () => media.removeEventListener('change', closeOnDesktop);
+
+    return () => {
+      media.removeEventListener('change', closeOnDesktop);
+    };
   });
 </script>
 
 <nav class="hidden pr-4 min-[1051px]:block" aria-label="Navigation principale">
-  <ul class="flex gap-8">
+  <ul class="m-0 flex list-none items-center gap-8 p-0">
     {#each Object.entries(nav_elements) as [label, destination]}
       <li class="group relative list-none">
         {#if typeof destination === 'string'}
@@ -42,10 +44,10 @@
           </button>
 
           <ul
-            class="invisible absolute top-full z-50 w-40 overflow-hidden rounded-[0.4em] bg-[var(--color1)] opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
+            class="invisible absolute top-full z-50 m-0 w-40 list-none overflow-hidden rounded-[0.4em] bg-[var(--color1)] p-0 opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
           >
             {#each Object.entries(destination) as [subLabel, href]}
-              <li>
+              <li class="list-none">
                 <a
                   {href}
                   class="block px-[14px] py-[10px] text-[var(--color4)] hover:text-[var(--color3)] focus-visible:text-[var(--color3)]"
@@ -59,8 +61,13 @@
       </li>
     {/each}
 
-    <li>
-      <StylisedA href="/reservation">Prendre rendez vous</StylisedA>
+    <li class="shrink-0 list-none">
+      <a
+        href="/reservation"
+        class="inline-flex h-12 box-border items-center justify-center rounded-[5px] bg-[var(--color3)] px-6 text-[20px] leading-none whitespace-nowrap text-white transition-colors hover:bg-[var(--color4)] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color4)]"
+      >
+        Prendre rendez-vous
+      </a>
     </li>
   </ul>
 </nav>
@@ -78,10 +85,12 @@
     class:translate-y-[17px]={menuOpen}
     class:rotate-45={menuOpen}
   ></span>
+
   <span
     class="h-[3px] w-4/5 bg-[var(--color4)] transition-opacity duration-300"
     class:opacity-0={menuOpen}
   ></span>
+
   <span
     class="h-[3px] w-4/5 bg-[var(--color4)] transition-transform duration-300"
     class:-translate-y-[17px]={menuOpen}
