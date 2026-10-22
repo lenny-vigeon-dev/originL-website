@@ -6,6 +6,7 @@
   import InfoPageSection from '$lib/components/InfoPageSection.svelte';
   import InfoPageQA from '$lib/components/InfoPageQA.svelte';
   import QAQuestion from '$lib/components/QAQuestion.svelte';
+  import PricePicText from '$lib/components/PricePicText.svelte';
 </script>
 
 <BasicContainer>
@@ -32,29 +33,34 @@
   </InfoPageSection>
 
   <Tile bg_color="var(--color5)">
-    <PicText2
-      left={false}
-      img_path="/salle_reflexo.jpg"
-      img_alt="Salle de consultation"
-    >
-      <Title title="Déroulé d’une séance :" position="center">
-        <p>
-          Nous prendrons d’abord un temps d’échange pour définir vos attentes
-          et choisir les zones à masser : les pieds, les mains
-          ou les deux selon la prestation convenue.
-          <br /><br />
-          Vous serez installé(e) confortablement sur ma table de massage,
-          avec des coussins pour soutenir votre position.
-          Une couverture sera à votre disposition.
-          Seules les zones massées devront être découvertes.
-          <br /><br />
-          Je réaliserai ensuite des gestes de massage adaptés
-          à votre sensibilité. Vous pourrez m’indiquer à tout moment
-          si vous préférez une pression plus douce.
-          La séance se terminera par un temps de repos et d’échange.
-        </p>
-      </Title>
-    </PicText2>
+    <Tile bg_color="var(--color5)">
+      <PricePicText
+        left={true}
+        img_path="/salle_reflexo.jpg"
+        img_alt="Salle de consultation"
+        title="Massage plantaire ou palmaire « Bien-être »"
+        description="Une pause détente consacrée aux pieds ou aux mains, selon votre préférence."
+        price={50}
+        duration={45}
+      >
+        <Title title="Déroulé d’une séance :" position="center">
+          <p>
+            Nous prendrons d’abord un temps d’échange pour définir vos attentes
+            et choisir la zone à masser : les pieds ou les mains.
+            <br /><br />
+            Vous serez installé(e) confortablement sur ma table de massage,
+            avec des coussins pour soutenir votre position.
+            Une couverture sera à votre disposition.
+            Seules les zones massées devront être découvertes.
+            <br /><br />
+            Je réaliserai ensuite des gestes de massage adaptés
+            à votre sensibilité. Vous pourrez m’indiquer à tout moment
+            si vous préférez une pression plus douce.
+            La séance se terminera par un temps de repos et d’échange.
+          </p>
+        </Title>
+      </PricePicText>
+    </Tile>
   </Tile>
 
   <InfoPageQA title="Questions fréquentes">

@@ -6,6 +6,7 @@
   import InfoPageSection from '$lib/components/InfoPageSection.svelte';
   import InfoPageQA from '$lib/components/InfoPageQA.svelte';
   import QAQuestion from '$lib/components/QAQuestion.svelte';
+  import PricePicText from '$lib/components/PricePicText.svelte';
 </script>
 
 <BasicContainer>
@@ -32,10 +33,15 @@
   </InfoPageSection>
 
   <Tile bg_color="var(--color5)">
-    <PicText2
-      left={false}
+    <PricePicText
+      left={true}
       img_path="/salle_reflexo.jpg"
       img_alt="Salle de consultation"
+      title="Séance de réflexologie faciale"
+      description="Un accompagnement personnalisé par la stimulation des zones réflexes du visage."
+      price={60}
+      duration={60}
+      note="Un bilan personnalisé sera établi lors de la première séance."
     >
       <Title title="Déroulé d’une séance :" position="center">
         <p>
@@ -53,7 +59,7 @@
           de partager votre ressenti avant de terminer la séance.
         </p>
       </Title>
-    </PicText2>
+    </PricePicText>
   </Tile>
 
   <InfoPageQA title="Questions fréquentes">
