@@ -4,6 +4,7 @@
   import PicText2 from '$lib/components/PicText2.svelte';
   import Title from '$lib/components/Title.svelte';
   import BasicContainer from '$lib/components/BasicContainer.svelte';
+  import ContactMail from '$lib/components/ContactMail.svelte';
 </script>
 
 <BasicContainer>
@@ -41,4 +42,11 @@
       </p>
     </Title>
   </PicText2>
+  <ContactMail
+    title="Mes coordonnées"
+    phoneNumber="+33 6 11 26 62 58"
+    email="reflexo.lr@gmail.com"
+    address="44 Bis Avenue du Clos saint Georges, Bussy-Saint-Georges 77600"
+    openingHours="Le samedi de 9 heures à 17 heures"
+  />
 </BasicContainer>
