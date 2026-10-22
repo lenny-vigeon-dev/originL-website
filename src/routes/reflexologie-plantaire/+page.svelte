@@ -6,6 +6,7 @@
   import InfoPageSection from '$lib/components/InfoPageSection.svelte';
   import InfoPageQA from '$lib/components/InfoPageQA.svelte';
   import QAQuestion from '$lib/components/QAQuestion.svelte';
+  import PricePicText from '$lib/components/PricePicText.svelte';
 </script>
 
 <BasicContainer>
@@ -30,23 +31,28 @@
     </p>
   </InfoPageSection>
   <Tile bg_color="var(--color5)">
-    <PicText2
-      left={false}
+    <PricePicText
+      left={true}
       img_path="salle_reflexo.jpg"
       img_alt="Salle de consultation"
+      title="Séance de réflexologie"
+      description="Un accompagnement personnalisé par la stimulation des points et zones réflexes."
+      price={60}
+      duration={60}
+      note="Un bilan personnalisé sera établi lors de la première séance."
     >
       <Title title="Déroulé d'une séance:" position="center">
         <p>
-          Vous serez installé(e) confortablement sur ma table de massage,
-          avec un coussin sous la tête et les genoux. Une couverture sera à votre disposition
-          pour vous assurer un confort optimal.
-          <br /><br />
-          Pendant la séance, j’appliquerai la méthode de réflexologie en identifiant avec vous les zones
-          les plus sensibles, en lien avec les échanges que nous aurons eu au préalable.
-          Nous travaillerons ensemble sur ces zones afin de favoriser votre bien-être.
-        </p>
+            Vous serez installé(e) confortablement sur ma table de massage,
+            avec un coussin sous la tête et les genoux. Une couverture sera à votre disposition
+            pour vous assurer un confort optimal.
+            <br /><br />
+            Pendant la séance, j’appliquerai la méthode de réflexologie en identifiant avec vous les zones
+            les plus sensibles, en lien avec les échanges que nous aurons eu au préalable.
+            Nous travaillerons ensemble sur ces zones afin de favoriser votre bien-être.
+          </p>
       </Title>
-    </PicText2>
+    </PricePicText>
   </Tile>
   <InfoPageQA title="Questions fréquentes">
     <QAQuestion
