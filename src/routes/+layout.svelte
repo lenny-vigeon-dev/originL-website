@@ -15,12 +15,14 @@
   <title>LR - OriginL</title>
 </svelte:head>
 
-<div class="flex h-screen w-full flex-col bg-[var(--color1)]">
+<div
+  class="flex h-dvh w-full min-w-0 flex-col overflow-hidden bg-[var(--color1)]"
+>
   <div class="shrink-0">
     <Header />
   </div>
 
-  <main class="min-h-0 flex-1 overflow-hidden">
+  <main class="min-h-0 min-w-0 flex-1 overflow-hidden">
     {@render children()}
   </main>
 
@@ -28,3 +30,16 @@
     <CookieModal />
   </div>
 </div>
+
+<style>
+  :global(html),
+  :global(body) {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  :global(body) {
+    min-height: 0;
+  }
+</style>
