@@ -1,19 +1,53 @@
+export function addOnScreenTrigger(
+  selector: string,
+  root: HTMLElement | null = null
+): () => void {
+  const scope = root ?? document;
 
-export function addOnScreenTrigger(cssProperty: string)
-{
-    const inViewport = (entries: Array<any>, observer: IntersectionObserver) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-            }
-        });
-    };
+  const elements = Array.from(
+    scope.querySelectorAll<HTMLElement>(selector)
+  );
 
-    const Obs = new IntersectionObserver(inViewport);
+  const reveal = (element: HTMLElement): void => {
+    element.style.opacity = '1';
+  };
 
-    // Attach observer to every [data-inviewport] element:
-    document.querySelectorAll(cssProperty).forEach(el => {
-        Obs.observe(el);
-    });
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
 
+  if (
+    prefersReducedMotion ||
+    typeof IntersectionObserver === 'undefined'
+  ) {
+    elements.forEach(reveal);
+    return () => {};
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      for (const entry of entries) {
+        if (
+          entry.isIntersecting &&
+          entry.target instanceof HTMLElement
+        ) {
+          reveal(entry.target);
+
+          currentObserver.unobserve(entry.target);
+        }
+      }
+    },
+    {
+      root,
+      threshold: 0
+    }
+  );
+
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
+
+  return () => {
+    observer.disconnect();
+  };
 }

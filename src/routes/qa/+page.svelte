@@ -25,9 +25,7 @@
           Questions fréquentes
         </h1>
 
-        <p
-          class="mt-5 text-xl leading-relaxed text-[var(--color4)]"
-        >
+        <p class="mt-5 text-xl leading-relaxed text-[var(--color4)]">
           Première visite, réservation ou préparation de votre séance :
           retrouvez ici les réponses à vos questions.
         </p>
@@ -52,16 +50,12 @@
               Votre première séance
             </h2>
 
-            <p
-              class="mt-4 text-lg leading-relaxed text-[var(--color4)]"
-            >
+            <p class="mt-4 text-lg leading-relaxed text-[var(--color4)]">
               Je vous accueille dans un espace calme, où nous prenons
               le temps d’échanger sur vos attentes et votre confort.
             </p>
 
-            <p
-              class="mt-4 text-lg leading-relaxed text-[var(--color4)]"
-            >
+            <p class="mt-4 text-lg leading-relaxed text-[var(--color4)]">
               Vous hésitez entre plusieurs prestations ?
               Vous pouvez me contacter avant de réserver.
             </p>
@@ -200,7 +194,9 @@
           Envoyez-moi un message, je serai ravie de vous renseigner.
         </p>
 
-        <div class="mt-8 [&>section]:bg-transparent [&>section]:p-0">
+        <div
+          class="mt-8 [&>section]:bg-transparent [&>section]:p-0 [&_form]:rounded-[16px] [&_form]:border [&_form]:border-[var(--color2)] [&_form]:bg-white"
+        >
           <SendMail />
         </div>
       </section>
