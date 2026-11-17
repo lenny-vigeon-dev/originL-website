@@ -3,7 +3,8 @@ export type PracticeId =
   | 'palmaire'
   | 'auriculaire'
   | 'faciale'
-  | 'massage';
+  | 'massage'
+  | 'tonification-visage';
 
 export interface PracticeQuestion {
   question: string;
@@ -228,6 +229,59 @@ export const practiceInformation: readonly [
         question: 'Dois-je me déshabiller ?',
         answer:
           'Non. Seules les zones massées doivent être accessibles. Prévoyez un pantalon facile à relever pour les pieds ou des manches permettant de dégager les poignets pour les mains.'
+      }
+    ]
+  },
+  {
+    id: 'tonification-visage',
+    label: 'Tonification du visage',
+    title: 'Tonification du visage',
+    image: '/tonification_visage.jpg',
+    imageAlt: 'Séance de stimulation du visage',
+
+    introduction: [
+      'La tonification du visage est une séance consacrée à la stimulation du visage, dans une recherche de tonus et de détente.',
+
+      'Les gestes sont adaptés à votre sensibilité. Ce moment permet de porter attention à une partie du corps que nous sollicitons chaque jour, à travers nos expressions et nos émotions.',
+
+      'Cette prestation s’adresse aux personnes qui souhaitent prendre un temps pour elles, avec une séance plus courte centrée sur le visage.'
+    ],
+
+    session: [
+      'Avant de commencer, nous prenons un moment pour échanger sur vos attentes et les éventuelles sensibilités de votre visage.',
+
+      'Vous serez installé(e) confortablement sur la table de massage, avec un coussin sous la tête et une couverture à votre disposition.',
+
+      'La séance est consacrée au visage. Les gestes et leur intensité sont ajustés à votre ressenti : vous pouvez me signaler une gêne ou demander une pause à tout moment.'
+    ],
+
+    pricingTitle: 'Séance de tonification du visage',
+    description:
+      'Une séance consacrée au visage, associant stimulation et détente.',
+    price: 40,
+    duration: 30,
+
+    questions: [
+      {
+        question: 'Combien de temps dure une séance ?',
+        answer:
+          'La séance de tonification du visage dure 30 minutes. Son tarif est de 40 €.'
+      },
+      {
+        question:
+          'Quelle est la différence avec la réflexologie faciale ?',
+        answer:
+          'La réflexologie faciale repose sur la stimulation de points et de zones réflexes du visage. La séance de tonification est une prestation spécifiquement consacrée au tonus et à la détente du visage. Nous pouvons en discuter ensemble pour choisir l’accompagnement qui correspond à vos attentes.'
+      },
+      {
+        question: 'Les gestes sont-ils appuyés ?',
+        answer:
+          'L’intensité est adaptée à votre sensibilité. Certains endroits peuvent être plus sensibles que d’autres : n’hésitez pas à me faire part de votre ressenti pendant la séance.'
+      },
+      {
+        question: 'Faut-il prévoir plusieurs séances ?',
+        answer:
+          'Vous pouvez réserver une séance ponctuelle. Si vous souhaitez poursuivre, nous pourrons en discuter selon vos attentes et votre ressenti, sans fixer à l’avance un nombre de séances.'
       }
     ]
   }
