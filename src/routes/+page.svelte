@@ -34,13 +34,24 @@
     }
   ];
 
+  let scrollContainer: HTMLDivElement;
+
   onMount(() => {
-    addOnScreenTrigger('[data-fade-in]');
-    jsScrollControl('.parallax-container');
+    const stopFadeIn = addOnScreenTrigger(
+      '[data-fade-in]',
+      scrollContainer
+    );
+
+    const stopScrollControl = jsScrollControl(scrollContainer);
+
+    return () => {
+      stopFadeIn();
+      stopScrollControl();
+    };
   });
 </script>
 
-<div class="parallax-container relative h-full overflow-x-hidden overflow-y-auto">
+<div bind:this={scrollContainer} class="parallax-container relative h-full overflow-x-hidden overflow-y-auto">
   <div class="parallax-layer pointer-events-none relative z-0">
     <SmartImg
       srcset={['bg1_512.jpg', 'bg1.jpg']}
@@ -51,8 +62,7 @@
   </div>
 
   <div
-    data-fade-in
-    class="absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 text-center text-[2rem] text-white"
+    data-fade-in class="absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 text-center text-[2rem] text-white"
   >
     <h1 class="text-[3rem] text-[var(--color1)] min-[801px]:text-[5rem]">
       Laetitia Rizzello

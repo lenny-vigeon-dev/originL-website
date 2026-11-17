@@ -1,22 +1,76 @@
-export function jsScrollControl(css_class: string, scroll_amount: number = 150, scroll_amount_pagekey: number = 600) {
-    document.addEventListener("keydown", function (event) {
-        const scrollContainer = document.querySelector(css_class);
+export function jsScrollControl(
+  target: string | HTMLElement,
+  scrollAmount: number = 150,
+  pageScrollAmount: number = 600
+): () => void {
+  const container =
+    typeof target === 'string'
+      ? document.querySelector<HTMLElement>(target)
+      : target;
 
-        // Check if the container is in the viewport
-        if (scrollContainer && scrollContainer.getBoundingClientRect().top >= 0) {
-            if (event.key === "ArrowDown") {
-                scrollContainer.scrollBy({ top: scroll_amount, behavior: "smooth" });
-                event.preventDefault();
-            } else if (event.key === "ArrowUp") {
-                scrollContainer.scrollBy({ top: -scroll_amount, behavior: "smooth" });
-                event.preventDefault();
-            } else if (event.key === "PageDown") {
-                scrollContainer.scrollBy({ top: scroll_amount_pagekey, behavior: "smooth" });
-                event.preventDefault();
-            } else if (event.key === "PageUp") {
-                scrollContainer.scrollBy({ top: -scroll_amount_pagekey, behavior: "smooth" });
-                event.preventDefault();
-            }
-        }
+  if (!container) {
+    return () => {};
+  }
+
+  const reducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  );
+
+  const offsets: Readonly<Partial<Record<string, number>>> = {
+    ArrowDown: scrollAmount,
+    ArrowUp: -scrollAmount,
+    PageDown: pageScrollAmount,
+    PageUp: -pageScrollAmount
+  };
+
+  function handleKeydown(event: KeyboardEvent): void {
+    if (
+      event.defaultPrevented ||
+      event.isComposing ||
+      event.ctrlKey ||
+      event.altKey ||
+      event.metaKey ||
+      event.shiftKey
+    ) {
+      return;
+    }
+
+    const offset = offsets[event.key];
+
+    if (offset === undefined) {
+      return;
+    }
+
+    if (
+      event.target instanceof Element &&
+      event.target.closest(
+        'input, textarea, select, button, [contenteditable]:not([contenteditable="false"]), [role="slider"], [role="spinbutton"], [role="combobox"], [role="listbox"]'
+      )
+    ) {
+      return;
+    }
+
+    if (!container.isConnected || container.clientHeight === 0) {
+      return;
+    }
+
+    const bounds = container.getBoundingClientRect();
+
+    if (bounds.bottom <= 0 || bounds.top >= window.innerHeight) {
+      return;
+    }
+
+    event.preventDefault();
+
+    container.scrollBy({
+      top: offset,
+      behavior: reducedMotion.matches ? 'instant' : 'smooth'
     });
+  }
+
+  document.addEventListener('keydown', handleKeydown);
+
+  return () => {
+    document.removeEventListener('keydown', handleKeydown);
+  };
 }
