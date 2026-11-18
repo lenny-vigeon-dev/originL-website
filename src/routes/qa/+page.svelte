@@ -20,7 +20,7 @@
     <div class="mx-auto w-full max-w-[1280px]">
       <header class="mx-auto mb-12 max-w-[850px] text-center">
         <h1
-          class="m-0 font-[family-name:var(--font-title)] text-[clamp(2.25rem,4vw,3.5rem)] leading-[1.15] font-normal text-[var(--color4)]"
+          class="m-0 font-[family-name:var(--font-title)] text-[clamp(2.25rem,4vw,3.5rem)] leading-[1.15] font-bold text-[var(--color4)]"
         >
           Questions fréquentes
         </h1>
@@ -45,7 +45,7 @@
 
           <div class="p-6 min-[901px]:p-8">
             <h2
-              class="m-0 font-[family-name:var(--font-title)] text-[2rem] leading-tight font-normal text-[var(--color4)]"
+              class="m-0 font-[family-name:var(--font-title)] text-[2rem] leading-tight font-bold text-[var(--color4)]"
             >
               Votre première séance
             </h2>
@@ -64,7 +64,7 @@
 
         <div class="min-w-0">
           <h2
-            class="m-0 mb-6 font-[family-name:var(--font-title)] text-[2rem] leading-tight font-normal text-[var(--color4)]"
+            class="m-0 mb-6 font-[family-name:var(--font-title)] text-[2rem] leading-tight font-bold text-[var(--color4)]"
           >
             Avant votre visite
           </h2>
@@ -185,7 +185,7 @@
 
       <section class="mt-12 min-[901px]:mt-16">
         <h2
-          class="m-0 text-center font-[family-name:var(--font-title)] text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-normal text-[var(--color4)]"
+          class="m-0 text-center font-[family-name:var(--font-title)] text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-bold text-[var(--color4)]"
         >
           Vous avez une autre question ?
         </h2>
