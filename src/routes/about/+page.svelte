@@ -27,7 +27,7 @@
       </p>
 
       <h1
-        class="m-0 font-[family-name:var(--font-title)] text-[clamp(2rem,4vw,3.5rem)] leading-[1.15] font-normal text-[var(--color4)]"
+        class="m-0 font-[family-name:var(--font-title)] text-[clamp(2rem,4vw,3.5rem)] leading-[1.15] font-bold text-[var(--color4)]"
       >
         Laetitia Rizzello, votre réflexologue
       </h1>
@@ -100,7 +100,7 @@
     >
       <div class="min-w-0">
         <h2
-          class="m-0 font-[family-name:var(--font-title)] text-[clamp(1.75rem,3vw,2.75rem)] leading-tight font-normal text-[var(--color4)]"
+          class="m-0 font-[family-name:var(--font-title)] text-[clamp(1.75rem,3vw,2.75rem)] leading-tight font-bold text-[var(--color4)]"
         >
           Un espace pour vous accueillir
         </h2>

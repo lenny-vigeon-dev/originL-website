@@ -69,7 +69,7 @@
     </h1>
 
     <h2 class="text-[2rem] text-[var(--color1)] min-[801px]:text-[4rem]">
-      Réflexologue
+      Réflexologue  
     </h2>
   </div>
 

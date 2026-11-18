@@ -25,7 +25,7 @@
   class="flex h-full min-w-0 box-border flex-col rounded-[20px] border border-[var(--color2)] bg-[var(--color5)] p-6 min-[801px]:p-8"
 >
   <h3
-    class="m-0 font-[family-name:var(--font-title)] text-[1.875rem] leading-tight font-normal text-[var(--color4)]"
+    class="m-0 font-[family-name:var(--font-title)] text-[1.875rem] leading-tight font-semibold text-[var(--color4)]"
   >
     {offer.title}
   </h3>

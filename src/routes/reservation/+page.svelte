@@ -36,7 +36,7 @@
     <div class="mx-auto w-full max-w-[1200px]">
       <header class="mb-8 px-6 text-center">
         <h1
-          class="m-0 font-[family-name:var(--font-title)] text-[clamp(2rem,4vw,3.25rem)] leading-[1.2] font-normal text-[var(--color4)]"
+          class="m-0 font-[family-name:var(--font-title)] text-[clamp(2rem,4vw,3.25rem)] leading-[1.2] font-bold text-[var(--color4)]"
         >
           Prendre rendez-vous
         </h1>

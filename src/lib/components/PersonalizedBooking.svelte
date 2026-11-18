@@ -1,11 +1,17 @@
 <script lang="ts">
-  interface Step {
+  interface Props {
+    compact?: boolean;
+  }
+
+  interface BookingStep {
     number: string;
     title: string;
     description: string;
   }
 
-  const steps: readonly Step[] = [
+  let { compact = false }: Props = $props();
+
+  const steps: readonly BookingStep[] = [
     {
       number: '01',
       title: 'Nous échangeons',
@@ -16,7 +22,7 @@
       number: '02',
       title: 'Nous définissons la séance',
       description:
-        'Je vous propose les techniques adaptées à cet échange. Nous convenons ensemble du déroulement.'
+        'Je vous propose les techniques adaptées. Nous convenons ensemble du déroulement.'
     },
     {
       number: '03',
@@ -28,42 +34,59 @@
 </script>
 
 <section
-  class="rounded-[24px] border border-[var(--color2)] bg-[var(--color5)] p-6 min-[801px]:p-10"
+  class="box-border w-full rounded-[24px] border border-[var(--color2)] bg-[var(--color5)]"
+  class:p-6={compact}
+  class:min-[801px]:p-8={compact}
+  class:p-8={!compact}
+  class:min-[801px]:p-10={!compact}
 >
-  <div class="mx-auto max-w-[850px] text-center">
+  <header
+    class="mx-auto max-w-[850px]"
+    class:text-left={compact}
+    class:text-center={!compact}
+  >
     <h2
-      class="m-0 font-[family-name:var(--font-title)] text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-normal text-[var(--color4)]"
+      class="m-0 font-[family-name:var(--font-title)] leading-tight font-bold text-[var(--color4)]"
+      class:text-[1.75rem]={compact}
+      class:text-[clamp(1.75rem,3vw,2.5rem)]={!compact}
     >
       Une séance construite avec vous
     </h2>
 
-    <p class="mt-4 text-xl leading-relaxed text-[var(--color4)]">
+    <p class="mt-4 text-lg leading-relaxed text-[var(--color4)]">
       Vous n’avez pas besoin de savoir quelle pratique choisir.
       Nous prenons cette décision ensemble, à partir de notre échange.
     </p>
-  </div>
+  </header>
 
   <ol
-    class="m-0 mt-10 grid list-none grid-cols-1 gap-8 p-0 min-[901px]:grid-cols-3"
+    class="m-0 grid list-none grid-cols-1 p-0"
+    class:mt-6={compact}
+    class:gap-5={compact}
+    class:mt-10={!compact}
+    class:gap-8={!compact}
+    class:min-[901px]:grid-cols-3={!compact}
   >
     {#each steps as step (step.number)}
-      <li class="min-w-0">
+      <li class="flex min-w-0 items-start gap-4">
         <span
           aria-hidden="true"
-          class="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color3)] text-lg text-[var(--color4)]"
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--color3)] text-base text-[var(--color4)]"
         >
           {step.number}
         </span>
 
-        <h3
-          class="mt-4 text-xl leading-snug font-semibold text-[var(--color4)]"
-        >
-          {step.title}
-        </h3>
+        <div class="min-w-0">
+          <h3
+            class="m-0 text-lg leading-snug font-semibold text-[var(--color4)]"
+          >
+            {step.title}
+          </h3>
 
-        <p class="mt-3 text-lg leading-relaxed text-[var(--color4)]">
-          {step.description}
-        </p>
+          <p class="mt-2 text-lg leading-relaxed text-[var(--color4)]">
+            {step.description}
+          </p>
+        </div>
       </li>
     {/each}
   </ol>

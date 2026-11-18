@@ -37,7 +37,7 @@
   <div class="mx-auto w-full max-w-[1280px]">
     <header class="mx-auto max-w-[800px] text-center">
       <h2
-        class="m-0 font-[family-name:var(--font-title)] text-[clamp(1.75rem,3vw,2.75rem)] leading-tight font-normal text-[var(--color4)]"
+        class="m-0 font-[family-name:var(--font-title)] text-[clamp(1.75rem,3vw,2.75rem)] leading-tight font-bold text-[var(--color4)]"
       >
         Ce qui guide mon accompagnement
       </h2>
@@ -63,7 +63,7 @@
           </span>
 
           <h3
-            class="mt-6 font-[family-name:var(--font-title)] text-[1.75rem] leading-tight font-normal text-[var(--color4)]"
+            class="mt-6 font-[family-name:var(--font-title)] text-[1.75rem] leading-tight font-bold text-[var(--color4)]"
           >
             {value.title}
           </h3>
