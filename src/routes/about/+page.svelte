@@ -126,7 +126,7 @@
 
         <a
           href="/practices"
-          class="mt-7 inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--color4)] px-6 py-3 text-lg text-[var(--color4)] no-underline transition-colors hover:bg-[var(--color4)] hover:text-[var(--color1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color4)]"
+          class="mt-7 inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--color4)] px-6 py-3 text-lg text-[var(--color5)] bg-[var(--color4)] no-underline transition-colors hover:bg-[var(--color3)] hover:text-[var(--color1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color4)]"
         >
           Découvrir mes pratiques
         </a>

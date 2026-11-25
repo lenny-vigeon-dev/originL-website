@@ -1,17 +1,23 @@
 import { error } from '@sveltejs/kit';
-import { practiceInformation } from '$lib/data/practice-information';
 import type { PageLoad } from './$types';
+import { practiceInformation } from '$lib/data/practice-information';
 
-export const load: PageLoad = ({ params }) => {
-  const slug = params.slug ?? 'plantaire';
+export const load = (({ params }) => {
+  if (!params.slug) {
+    return {
+      practice: null
+    };
+  }
 
   const practice = practiceInformation.find(
-    (item) => item.id === slug
+    (item) => item.id === params.slug
   );
 
   if (!practice) {
-    error(404, 'Cette pratique n’existe pas.');
+    error(404, 'Cette pratique est introuvable.');
   }
 
-  return { practice };
-};
+  return {
+    practice
+  };
+}) satisfies PageLoad;

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import PricingTile from '$lib/components/PricingTile.svelte';
+  import PersonalizedSessionCard from './PersonalizedSessionCard.svelte';
 
   interface Props {
     left?: boolean;
@@ -9,12 +9,6 @@
     background_color_img?: string;
     background_color_content?: string;
     children?: Snippet;
-    title: string;
-    description: string;
-    price: number;
-    duration: number;
-    note?: string;
-    reservationHref?: string;
   }
 
   let {
@@ -23,29 +17,24 @@
     img_alt,
     background_color_img = 'transparent',
     background_color_content = 'transparent',
-    children,
-    title,
-    description,
-    price,
-    duration,
-    note,
-    reservationHref = '/reservation'
+    children
   }: Props = $props();
 </script>
 
 <div
-  class="flex w-full flex-col bg-[var(--color1)]"
-  class:min-[1001px]:flex-row={left}
-  class:min-[1001px]:flex-row-reverse={!left}
+  class={`flex w-full flex-col bg-[var(--color1)] ${
+    left ? 'min-[1001px]:flex-row' : 'min-[1001px]:flex-row-reverse'
+  }`}
 >
   <div
     class="min-w-0 flex-1 p-8 min-[1001px]:p-20"
     style:background-color={background_color_img}
   >
     <img
-      class="block h-full w-full object-cover"
       src={img_path}
       alt={img_alt}
+      loading="lazy"
+      class="block h-full w-full object-cover"
     />
   </div>
 
@@ -56,14 +45,7 @@
     {@render children?.()}
 
     <div class="mt-8">
-      <PricingTile
-        {title}
-        {description}
-        {price}
-        {duration}
-        {note}
-        {reservationHref}
-      />
+      <PersonalizedSessionCard />
     </div>
   </div>
 </div>

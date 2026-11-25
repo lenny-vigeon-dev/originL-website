@@ -30,11 +30,6 @@
     left={true}
     img_path="/salle_reflexo.jpg"
     img_alt="Salle de consultation"
-    title={practice.pricingTitle}
-    description={practice.description}
-    price={practice.price}
-    duration={practice.duration}
-    note={practice.note}
   >
     <Title title="Déroulé d’une séance :" position="center">
       <div

@@ -15,10 +15,16 @@
 
 <BasicContainer>
   <section
-    class="w-full box-border bg-[var(--color1)] px-6 py-12 min-[901px]:px-12 min-[901px]:py-16"
+    class="box-border w-full bg-[var(--color1)] px-6 py-12 min-[901px]:px-12 min-[901px]:py-16"
   >
     <div class="mx-auto w-full max-w-[1280px]">
       <header class="mx-auto mb-12 max-w-[850px] text-center">
+        <p
+          class="m-0 mb-4 text-base tracking-[0.12em] text-[var(--color4)] uppercase"
+        >
+          Besoin de plus d’informations ?
+        </p>
+
         <h1
           class="m-0 font-[family-name:var(--font-title)] text-[clamp(2.25rem,4vw,3.5rem)] leading-[1.15] font-bold text-[var(--color4)]"
         >
@@ -183,7 +189,7 @@
         </div>
       </div>
 
-      <section class="mt-12 min-[901px]:mt-16">
+      <section class="mt-12 border-t border-[var(--color2)] pt-10 min-[901px]:mt-16 min-[901px]:pt-12">
         <h2
           class="m-0 text-center font-[family-name:var(--font-title)] text-[clamp(1.75rem,3vw,2.5rem)] leading-tight font-bold text-[var(--color4)]"
         >

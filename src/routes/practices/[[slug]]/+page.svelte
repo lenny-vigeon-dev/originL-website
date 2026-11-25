@@ -4,6 +4,7 @@
   import BasicContainer from '$lib/components/BasicContainer.svelte';
   import PracticeSidebar from '$lib/components/PracticeSidebar.svelte';
   import PracticeContent from '$lib/components/PracticeContent.svelte';
+  import PracticesOverview from '$lib/components/PracticesOverview.svelte';
 
   interface Props {
     data: PageData;
@@ -15,11 +16,14 @@
 </script>
 
 <svelte:head>
-  <title>{data.practice.title} — Laetitia Rizzello</title>
+  <title>
+    {data.practice?.title ?? 'Mes pratiques'} — Laetitia Rizzello
+  </title>
 
   <meta
     name="description"
-    content={data.practice.description}
+    content={data.practice?.description ??
+      'Découvrez les pratiques proposées par Laetitia Rizzello et choisissez ensemble un accompagnement adapté à vos attentes.'}
   />
 </svelte:head>
 
@@ -28,14 +32,18 @@
 >
   <PracticeSidebar
     practices={practiceInformation}
-    activeId={data.practice.id}
+    activeId={data.practice?.id ?? null}
     bind:open={sidebarOpen}
   />
 
   <div class="min-h-0 min-w-0 flex-1 overflow-hidden">
-    {#key data.practice.id}
+    {#key data.practice?.id ?? 'overview'}
       <BasicContainer>
-        <PracticeContent practice={data.practice} />
+        {#if data.practice}
+          <PracticeContent practice={data.practice} />
+        {:else}
+          <PracticesOverview practices={practiceInformation} />
+        {/if}
       </BasicContainer>
     {/key}
   </div>

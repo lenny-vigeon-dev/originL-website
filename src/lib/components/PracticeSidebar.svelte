@@ -1,24 +1,21 @@
 <script lang="ts">
-  import type {
-    PracticeId,
-    PracticeInformation
-  } from '$lib/data/practice-information';
+  import type { PracticeInformation } from '$lib/data/practice-information';
 
   interface Props {
     practices: readonly PracticeInformation[];
-    activeId: PracticeId;
+    activeId?: string | null;
     open?: boolean;
   }
 
   let {
     practices,
-    activeId,
+    activeId = null,
     open = $bindable(true)
   }: Props = $props();
 
-  const navigationId = $props.id();
+  const id = $props.id();
 
-  function handleSelection(): void {
+  function closeOnMobile(): void {
     if (window.matchMedia('(max-width: 1000px)').matches) {
       open = false;
     }
@@ -26,18 +23,18 @@
 </script>
 
 <aside
-  class={`shrink-0 border-b border-[var(--color2)] bg-[var(--color5)] min-[1001px]:h-full min-[1001px]:overflow-y-auto min-[1001px]:border-r min-[1001px]:border-b-0 ${
+  class={`box-border w-full shrink-0 border-b border-[var(--color2)] bg-[var(--color5)] min-[1001px]:h-full min-[1001px]:overflow-y-auto min-[1001px]:border-r min-[1001px]:border-b-0 ${
     open ? 'min-[1001px]:w-72' : 'min-[1001px]:w-20'
   }`}
 >
   <div class="flex items-center gap-3 p-4">
     <button
       type="button"
-      onclick={() => (open = !open)}
+      class="m-0 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--color2)] bg-transparent p-0 text-[var(--color4)] hover:bg-[var(--color1)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color4)]"
+      aria-label={open ? 'Réduire le menu des pratiques' : 'Ouvrir le menu des pratiques'}
       aria-expanded={open}
-      aria-controls={navigationId}
-      aria-label={open ? 'Replier le menu des pratiques' : 'Afficher les pratiques'}
-      class="m-0 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-[var(--color2)] bg-transparent p-0 text-[var(--color4)] transition-colors hover:bg-[var(--color1)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color4)]"
+      aria-controls={`${id}-navigation`}
+      onclick={() => (open = !open)}
     >
       <svg
         width="22"
@@ -45,7 +42,7 @@
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="1.8"
+        stroke-width="1.5"
         stroke-linecap="round"
         aria-hidden="true"
       >
@@ -53,35 +50,42 @@
       </svg>
     </button>
 
-    <span
-      class={`text-xl font-semibold text-[var(--color4)] ${
-        open ? '' : 'min-[1001px]:hidden'
-      }`}
-    >
-      Mes pratiques
-    </span>
+    {#if open}
+      <a
+        href="/practices"
+        aria-current={activeId === null ? 'page' : undefined}
+        onclick={closeOnMobile}
+        class={`rounded-xl px-4 py-3 text-lg font-bold no-underline transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color4)] ${
+          activeId === null
+            ? 'bg-[var(--color4)] text-[var(--color1)] hover:text-[var(--color1)]'
+            : 'text-[var(--color4)] hover:bg-[var(--color1)] hover:text-[var(--color4)]'
+        }`}
+      >
+        Mes pratiques
+      </a>
+    {/if}
   </div>
 
   <nav
-    id={navigationId}
+    id={`${id}-navigation`}
     hidden={!open}
-    aria-label="Choisir une pratique"
-    class="px-3 pb-5"
+    aria-label="Navigation des pratiques"
+    class="px-4 pb-6"
   >
     <ul class="m-0 flex list-none flex-col gap-2 p-0">
       {#each practices as practice (practice.id)}
-        <li class="list-none">
+        <li>
           <a
             href={`/practices/${practice.id}`}
-            onclick={handleSelection}
             aria-current={activeId === practice.id ? 'page' : undefined}
-            class={`block rounded-xl border px-4 py-4 text-lg leading-snug no-underline transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color4)] ${
+            onclick={closeOnMobile}
+            class={`block rounded-xl px-4 py-3 text-lg leading-snug no-underline transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color4)] ${
               activeId === practice.id
-                ? 'border-[var(--color4)] bg-[var(--color4)] text-[var(--color1)] hover:text-[var(--color1)]'
-                : 'border-transparent text-[var(--color4)] hover:bg-[var(--color1)] hover:text-[var(--color4)]'
+                ? 'bg-[var(--color4)] font-bold text-[var(--color1)] hover:text-[var(--color1)]'
+                : 'text-[var(--color4)] hover:bg-[var(--color1)] hover:text-[var(--color4)]'
             }`}
           >
-            {practice.label}
+            {practice.title}
           </a>
         </li>
       {/each}
